@@ -1,0 +1,97 @@
+---
+title: "A Comparative Ecophysiological Survey of Lycophytes, Ferns, and Seed Plants"
+author: 
+date: 
+output:
+  word_document:
+    reference_docx: manuscriptstyle.docx
+  pdf_document: default
+  html_document:
+    number_sections: yes
+csl: new-phytologist.csl
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '../')
+```
+
+
+# Abstract
+
+/
+Key Words:
+
+# Introduction
+
+Our understanding of the ecophysiology of ferns and lycophytes is limited. However, recent studies have shown that these two groups possess an unusual set of functional traits that likely influence their ecology (Brodribb, Watkins, Pinterman, Franks). For example, Watkins has demonstrated that the gametophyte generations of many tropical ferns are markedly desiccation-tolerant, with tolerance being closely linked to ecological preference. In seed plants, desiccation tolerance has been essentially lost from vegetative tissues. Additional work on ferns indicates a tight link between carbon and nitrogen relations with species distribution (Watkins 2005). Work on fern hydraulics is in its early stages; however, a study on tropical ferns suggests that ferns have a significantly more resistive vascular system than seed plants. A recent study on temperate species proposes that ferns are more similar to gymnosperms in their hydraulic properties (Watkins). 
+
+\
+
+	A primary controlling factor in fern hydraulics is stomatal function. Recently, a series of studies have shown that stomatal control of ferns and lycophytes differs from seed plants. Early evidence on fern and lycophyte stomata indicates that these groups have inefficient stomatal systems. Ongoing work by Brodribb et al. is suggesting that ferns and lycophytes may possess a hydropassive mechanism which influences stomatal opening and closing. Unlike seed plants, fern and lycophyte stomata fail to close in response to abscisic acid (ABA) addition. This significant new discovery suggests that at least two fundamentally different mechanisms of stomatal function have evolved in early plants. This, in turn, may impact the differential distribution of ferns and lycophytes relative to seed plants.
+	
+	\
+	
+	Studies that examine the comparative physiology of ferns and lycophytes to seed plants are rare. Therefore, it is difficult to derive widely applicable hypotheses of the ecophysiological behavior of these groups. From the few studies we were able to find, ferns and lycophytes appear to have lower photosynthetic rates than seed plants. This would suggest that ferns may be at a competitive disadvantage when growing with seed plants. However, none of these studies have systematically compared the physiology of these groups when growing in similar habitats. 
+	
+	\
+	
+	The goal of the current study is to examine the comparative physiology of a number of temperate ferns and lycophytes to angiosperms. We specifically examined several physiological parameters in a pairwise comparison between a fern or a lycophyte and an angiosperm in identical habitats. Given recent suggestions on inefficient stomatal functions, we hypothesized that ferns would have lower photosynthetic rates and stomatal conductance values in comparison to the nearby angiosperms. This, in turn, would impact aspects of leaf morphology (stomatal density), physiology (chlorophyll concentration), nutrient relations (N and P), and carbon relations. We speculate that the differences in physiological function may affect the ecology of these ferns, lycophytes, and angiosperms. 
+#Methods
+
+## Study site and species
+
+This study was conducted at two sites in upstate New York. The data for most species were gathered at the Edmund Niles Huyck Preserve and Biological Research Station in Rensselaerville, New York.  This site is characterized by mixed hardwood hemlock forests along the Helderberg escarpment in the foothills of the Catskill mountain range. Data from the second site were gathered at a natural area on the campus of Colgate University in Hamilton, New York, situated in the foothills surrounding the Chenango Valley. Forests at this site are younger, but consist of a similar species richness and composition as the first site. 
+
+\
+
+We examined a series of fern, lycophyte, and angiosperm species at both sites (Table 1). The main focus of this work was to examine ferns relative to light-analogous angiosperms. To accomplish this, we would select a fern species and then locate the nearest neighbor angiosperm growing in similar habitat conditions. We limited our choice of angiosperms to those taxa that were herbaceous and similar in size and stature to the fern in question. At the Huyck Preserve, we sampled across two distinct habitats: understory low-light areas and open, high-light areas. 
+
+## Physiological Measurements
+
+To generate comparative physiological data, we followed two procedures. The first was to generate a series of detailed light response curves for a select number of species. The second approach, to increase our comparative sample size, was to make several survey measurements of maximum photosynthetic and conductance rates for additional species; this step was only completed at the Huyck Preserve. All gas exchange parameters were generated using the LiCor 6400 XT Photosynthesis System (Lincoln, NE). For the light response curves, the system was set up to a flow rate of 300 units, and a CO2 concentration of 400 umol m-2 s-1. Initial light measurements were made using the built-in quantum sensor to determine typical ambient light levels. These measurements were used to generate light response curves using appropriate light levels for high-light and low-light species separately. The light levels were not identical for each species, with several points being added or subtracted with each run, but they generally followed the same template. For high light species this was light levels of 1500, 1000, 800, 600, 500, 400, 300, 250, 200, 150, 100, 50, 25, 15, 10,5 and 0 (umol m-2 s-1) . Low light curves followed this pattern; 500, 400, 350, 300, 250, 200, 150, 100, 50, 25, 15, 10, 5 and 0 (again umol m-2 s-1). Using the data we generated from the light response curves, we developed an understanding of the levels at which low-light and high-light species reached their maximum photosynthetic rates. These data were then used to complete our survey measurements. All high-light species reached maximum rates at 1200 umol m-2 s-1 and all low-light species reached maximum rates at 600. All other LiCor parameters were identical to those used for the light response curves.
+
+## Foliar chemistry
+
+Air-dried and pulverized tissues from each sample were analyzed for total C and N. Data for percent carbon and percent nitrogen were generated using a costech elemental analyzer blksjdf;jas. Phosphorus data were gathered using alsdjfsklj;
+
+## Statistial analyses
+
+
+# Results
+
+## Light response curve parameters
+
+In closed canopy environments, angiosperms had significantly higher respiration rates than ferns, which were equal to lycophytes (f2,44= 10.12, p=0.0003). In addition, photosynthetic quantum yield was higher in lycophytes than in angiosperms, whereas ferns had intermediate values between the two (f2,44=5.04, p=0.011). Light compensation points in ferns were equivalent to lycophytes, which both had higher points than angiosperms (f2,44=10.28, p=0.0002). In open canopy environments where lycophytes were lacking, ferns had significantly higher respiration rates (f1,18= 20.87, p= 0.0003), equivalent quantum yields (f1,18= 1.56, p=0.228), and significantly lower light compensation points(f1,18=12.83, p=0.0023). 
+
+\
+
+For angiosperms, species growing in open habitats had significantly more negative respiration rates (t22=-6.88, p<0.0001), equivalent quantum yields(t22=1.89, p=0.072), and higher light compensation points (t22=5.23, p<0.0001) than those angiosperms growing in closed habitats.  
+
+## Physiological surveys
+
+Ferns growing in open environments had significantly higher maximum area-based photosynthetic rates and stomatal conductances and lower internal leaf CO2 concentrations than those growing in closed canopies (Figure dfg). Angiosperms growing in open canopy environments also had significantly higher maximum area-based photosynthetic rates and stomatal conductances than those growing in closed environments, but there was no significant difference in internal leaf CO2 concentrations between the two light environments. 
+
+\
+
+In open canopy environments, angiosperms, on average, had significantly higher maximum photosynthetic rates and stomatal conductances than ferns growing in similar light conditions. There was no significant difference between the internal CO2 concentrations of angiosperm leaves and fern fronds; however, the statistics hint at a strong trend (Figure asldf). 
+
+\
+
+Across closed canopy environments where lycophytes, some of these differences between angiosperms and ferns break down. For example, there is no significant difference between the photosynthetic rates of angiosperms and ferns, although these two groups are significantly different than lycophytes. This relationship is also shown in internal CO2 concentrations, with angiosperms and ferns showing no significant difference and lycophytes differing significantly from both groups. For stomatal conductances, however, all three groups are significantly different (Figure adfd). 
+
+# Nutrient relations
+
+In open canopy environments, ferns had significantly lower phosphorus concentrations than those growing in closed canopies. Angiosperms had no significant difference across the light gradient. In both environments, ferns and lycophytes do not differ significantly, but both have significantly lower phosphorus levels than angiosperms (Figure asdf). Ferns in open light environments have significantly lower nitrogen levels than those ferns growing in closed light environments; the same is true of angiosperms. Lycophytes have significantly lower nitrogen levels than ferns and angiosperms, which do not statistically differ, in both light conditions (Figure adf). 
+
+\
+
+	Neither ferns nor angiosperms differ within their classifications significantly across the two light environments in their nitrogen to phosphorus ratio (N:P). In open light environments, ferns have significantly higher N:P ratios than angiosperms. In closed canopy environments, ferns do not differ from angiosperms significantly in their N:P ratios, but do differ from lycophytes. Also, lycophytes and angiosperms do not differ significantly. 
+
+\
+
+	Ferns in open light canopies have significantly higher carbon to nitrogen ratios (C:N) than those growing in closed canopies, while angiosperms do not differ across the light gradient. Also, ferns have significantly higher C:N ratios than corresponding angiosperms in open light environments. In closed canopies, lycophytes have the highest C:N ratios and differ significantly from both ferns and angiosperms, which do not significantly differ.
+
+## Physiological parameters
+
+In open canopy habitats, ferns had significantly lower stomatal densities than those growing in closed canopies, whereas angiosperms showed no significant differences in stomatal densities between the two habitats. In both open and closed environments, ferns had significantly lower stomatal densities than analogous angiosperms (Figure asdfs). Similarly, ferns displayed a significantly lower SPAD index, a measurement of chlorophyll concentration, in open canopy environments versus closed canopies. Angiosperms showed no significant difference across the light gradient. In open environments, ferns had significantly lower SPAD index values than corresponding angiosperms, while the reverse was true in closed canopy habitats, with ferns displaying significantly higher values than analogous angiosperms (Figure asdfkj). 
