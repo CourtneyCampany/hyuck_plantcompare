@@ -1,0 +1,33 @@
+genus_species,plant_group,site,canopy,species
+Ageratina altissima (L.) King & H. Rob.,Angiosperm,Huyck_Preserve,Closed,age_til
+Arisaema triphyllum (L.) Schott,Angiosperm,Huyck_Preserve,Closed,ari_tri
+Eupatorium purpureum L.,Angiosperm,Huyck_Preserve,Open,eup_pur
+Eurybia divaricata (Aster divaricatus) (L.) G.L. Nesom,Angiosperm,Huyck_Preserve,Closed,eur_div
+Impatiens pallida Nutt.,Angiosperm,Huyck_Preserve,Closed,imp_pal
+Lysimachia ciliata L.,Angiosperm,Huyck_Preserve,Open,lys_cil
+Rumex acetosella L.,Angiosperm,Huyck_Preserve,Open,rum_ace
+Tussilago farfara L.,Angiosperm,Huyck_Preserve,Open,tus_far
+Urtica dioica L.,Angiosperm,Huyck_Preserve,Closed,urt_dio
+Viola sp.  ,Angiosperm,Huyck_Preserve,Closed,vio_sp
+Adiantum pedatumL.,Fern,Huyck_Preserve,Closed,adi_ped
+Athyrium filix-femina(L.) Mertens ,Fern,Huyck_Preserve,Open,ath_fil
+Botrychium dissectumSpreng.,Fern,Colgate_University,Closed,bot_dis
+Botrychium multifidum(Gmel.) Rupr.,Fern,Colgate_University,Closed,bot_mul
+Dennstaedtia punctilobula(Michx.) T. Moore,Fern,Huyck_Preserve,Open,den_pun
+Deparia acrostichoides(Sw.) M. Kato,Fern,Huyck_Preserve,Closed,dep_acr
+Dryopteris cristata(L.) Gray,Fern,Huyck_Preserve,Closed,dry_cri
+Dryopteris intermedia(Muhl. Ex Willd.) Gray,Fern,Huyck_Preserve,Closed,dry_int
+Dryopteris marginalis(L.) Gray,Fern,Huyck_Preserve,Closed,dry_mar
+Onoclea sensibilis L.,Fern,Huyck_Preserve,Open,ono_sen
+Osmundastrum cinnamomeumL.,Fern,Huyck_Preserve,Open,osm_cin
+Osmunda claytoniana L.,Fern,Huyck_Preserve,Closed,osm_cla
+Phegopteris connectilis(Michaux) Watt,Fern,Huyck_Preserve,Closed,phe_con
+Polystichum acrostichoides(Michx.) Schott,Fern,Huyck_Preserve,Closed,pol_acr
+Pteridium aquilinum(L.) Kuhn,Fern,Huyck_Preserve,Closed,pte_aqu
+Thelypteris noveboracensis(L.) Nieuwland,Fern,Huyck_Preserve,Closed,the_nov
+Dendrolycopodium dendroideum(Michx.) A. Haines,Lycophyte,Huyck_Preserve,Closed,den_den
+Dendrolycopodium obscurum(L.) A. Haines,Lycophyte,Colgate_University,Closed,den_obs
+Diphasiastrum complanatum (L.) Holub,Lycophyte,Colgate_University,Closed,dip_com
+Diphasiastrum digitatum (Dill. Ex A. Braun) Holub,Lycophyte,Huyck_Preserve,Closed,dip_dig
+Lycopodium clavatum L.,Lycophyte,Huyck_Preserve/Colgate_University,Closed,lyc_cla
+Spinulum annotinum (L.) Haines,Lycophyte,Colgate_University,Closed,spi_ann
