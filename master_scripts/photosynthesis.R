@@ -22,11 +22,11 @@ closed <- photo[photo$canopy == "Closed", "Photo"]
 par(mfrow=c(1,2))
 ##plant group
 par(mar=c(5,5,1,0))
-plot(0:1,0:1,type="n",xlim=c(0.5,3.5), ylim=c(0,25), xaxt='n', ylab="",
+plot(0:1,0:1,type="n",xlim=c(0.5,3.5), ylim=c(0,25), xaxt='n', ylab="Photosynthesis",
      xlab="")
 vioplot(lyco, fern, angio,at=1:3 ,add=TRUE,
         col="grey98", lwd=2,rectCol="grey60", colMed="black", pchMed=16, wex=.75)
-axis(2, labels=FALSE, tcl=.25)
+# axis(2, labels=FALSE, tcl=.25)
 axis(1, labels = c("lycophytes","ferns","angio"), at=1:3)
 
 ##habitat
@@ -37,6 +37,19 @@ vioplot(open, closed,at=1:2 ,add=TRUE,
         col="grey98", lwd=2,rectCol="grey60", colMed="black", pchMed=16, wex=.75)
 axis(2, labels=FALSE, tcl=.25)
 axis(1, labels = c("open","closed"), at=1:2)
+
+##by group x habitat
+photo$uniqueid<- paste(photo$plant_group, photo$canopy, sep="-")
+
+par(mar=c(5,5,1,1))
+boxplot(Photo ~ uniqueid, data=photo, outline = FALSE,xaxt='n',at=c(1:2, 4:5, 7),
+        ylab="Photosynthesis")
+axis(1, labels = c("Closed", "Open", "Closed", "Open", "Closed"), at=c(1:2, 4:5, 7))
+mtext(text = c("Angiosperms","Ferns","Lycophytes"), side=1, line=2.5,
+      at=c(1.5, 4.5, 7))
+
+
+
 
 ##using ggplot
 # p <- ggplot(photo, aes(x=plant_group, y=Photo, color=bla)) + 
