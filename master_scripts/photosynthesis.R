@@ -38,7 +38,7 @@ vioplot(open, closed,at=1:2 ,add=TRUE,
 axis(2, labels=FALSE, tcl=.25)
 axis(1, labels = c("open","closed"), at=1:2)
 
-##by group x habitat
+##by group x habitat = Photosynthesis
 photo$uniqueid<- paste(photo$plant_group, photo$canopy, sep="-")
 
 par(mar=c(5,5,1,1))
@@ -49,7 +49,26 @@ mtext(text = c("Angiosperms","Ferns","Lycophytes"), side=1, line=2.5,
       at=c(1.5, 4.5, 7))
 
 
+##by group x habitat = Conductance
+photo$uniqueid<- paste(photo$plant_group, photo$canopy, sep="-")
 
+par(mar=c(5,5,1,1))
+boxplot(Cond ~ uniqueid, data=photo, outline = FALSE,xaxt='n',at=c(1:2, 4:5, 7),
+        ylab="Stomatal Conductance")
+axis(1, labels = c("Closed", "Open", "Closed", "Open", "Closed"), at=c(1:2, 4:5, 7))
+mtext(text = c("Angiosperms","Ferns","Lycophytes"), side=1, line=2.5,
+      at=c(1.5, 4.5, 7))
+
+
+####by group x habitat = WUE
+photo$WUE <- with(photo, Photo/Trmmol)
+
+par(mar=c(5,5,1,1))
+boxplot(WUE ~ uniqueid, data=photo, outline = FALSE,xaxt='n',at=c(1:2, 4:5, 7),
+        ylab="WUE")
+axis(1, labels = c("Closed", "Open", "Closed", "Open", "Closed"), at=c(1:2, 4:5, 7))
+mtext(text = c("Angiosperms","Ferns","Lycophytes"), side=1, line=2.5,
+      at=c(1.5, 4.5, 7))
 
 ##using ggplot
 # p <- ggplot(photo, aes(x=plant_group, y=Photo, color=bla)) + 

@@ -30,3 +30,15 @@ vioplot(open, closed,at=1:2 ,add=TRUE,
         col="grey98", lwd=2,rectCol="grey60", colMed="black", pchMed=16, wex=.75)
 axis(2, labels=FALSE, tcl=.25)
 axis(1, labels = c("open","closed"), at=1:2)
+
+##by group x habitat
+nitro$uniqueid<- paste(nitro$plant_group, nitro$canopy, sep="-")
+id_labels <- c("Angiosperm\nClosed", "Angiosperm\nOpen", "Fern\nClosed",
+               "Fern\nOpen", "Lycophyte\nClosed")
+
+windows()
+boxplot(n_perc ~ uniqueid, data=nitro, outline = FALSE, xaxt='n',at=c(1:2, 4:5, 7))
+axis(1, labels = c("Closed", "Open", "Closed", "Open", "Closed"), at=c(1:2, 4:5, 7))
+mtext(text = c("Angiosperms","Ferns","Lycophytes"), side=1, line=2.5,
+      at=c(1.5, 4.5, 7))
+
