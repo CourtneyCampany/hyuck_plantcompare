@@ -1,13 +1,34 @@
-#Stats for species groups
+#Stats for overall difference between open vs closed
 library(visreg)
 library(car)
 library(lme4)
 library(MuMIn)
 library(multcomp)
 
+#cover type treatments by species
+treatments <- read.csv("raw_data/species_list.csv")
+
+#stomatal anatomy
 stom <- read.csv("raw_data/stomatal_density.csv")
+stom2 <- aq2 <- merge(stom, treatments[,c(2,4:5)])
+
+stom_agg <- doBy::summaryBy(sto_den ~ species + individual + plant_group,
+                            FUN=mean, data=stom2)
+
+
+#gas exchange
 photo <- read.csv("raw_data/photo_chem.csv")
-photo$iwue <- with(photo, Photo/Trmmol)
+  photo$iwue <- with(photo, Photo/Trmmol)
+
+#stoichemotry
+chem <- read.csv("raw_data/photo_chem.csv")
+
+#light response curves
+aq <- read.csv("calculated_data/AQ_params.csv")
+  aq$species <- gsub("-\\d+","", aq$ID)
+  aq$individual <- gsub(".*-","", aq$ID)
+aq2 <- merge(aq, treatments[,c(2,4:5)])
+
 
 
 ##each model has species as random effect
