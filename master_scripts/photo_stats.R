@@ -24,7 +24,6 @@ length(unique(lyco$species)) #6
 
 ##use TYPE 3 sum of squares in Anova for unbalanced design
 
-  
 ###comparative stats-----------------------
 shade <- droplevels(photo[photo$canopy == "Closed",])
 shade_mod <-lmer(Photo ~ plant_group + (1|species), data=shade)
