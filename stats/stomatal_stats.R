@@ -16,42 +16,74 @@ stom_agg <- doBy::summaryBy(sto_den ~ species + individual + plant_group,
                             FUN=mean, data=stom, keep.names = TRUE)
 
 stom_dens <- merge(stom_agg, treatments[,c(4:5)])
-stom_dens$canopyplant <- interaction(stom_dens$canopy, stom_dens$plant_group)
+  stom_dens$canopyplant <- interaction(stom_dens$canopy, stom_dens$plant_group)
+  
+  mean(stom_dens[stom_dens$plant_group == "Angio", "sto_den"])
+  mean(stom_dens[stom_dens$plant_group == "Fern", "sto_den"])
+  mean(stom_dens[stom_dens$plant_group == "Lycophyte", "sto_den"])
+  
+
+fern <- droplevels(stom_dens[stom_dens$plant_group == "Fern", ])
+  
+angio <-droplevels(stom_dens[stom_dens$plant_group == "Angio", ])
+
+lyco <-droplevels(stom_dens[stom_dens$plant_group == "Lycophyte", ])
+
+
+###comparative stats-----------------------
+shade <- droplevels(stom_dens[stom_dens$canopy == "Closed",])
+
+shade_mod <-lmer(sto_den ~ plant_group + (1|species), data=shade)
+plot(shade_mod) #looks good
+
+Anova(shade_mod, type = "3")
+summary(shade_mod)
+r.squaredGLMM(shade_mod) 
+visreg(shade_mod)
+
+#not different in shade, but less in ferns
+
+tukey_shade <- glht(shade_mod, linfct = mcp(plant_group = "Tukey"))
+shade_siglets <-cld(tukey_shade)
+shade_siglets2 <- shade_siglets$mcletters$Letters
+
+#Angio      Fern Lycophyte 
+#"a"       "a"       "a"
+
+#lost of species variation
+#R2m       R2c
+#0.2958341 0.9223959
+
+mean(shade[shade$plant_group == "Angio", "sto_den"])
+mean(shade[shade$plant_group == "Fern", "sto_den"])
+mean(shade[shade$plant_group == "Lycophyte", "sto_den"])
+
 
 ###comparative stats-----------------------
 fernangio <- droplevels(stom_dens[!stom_dens$plant_group %in% "Lycophyte", ])
 
-#stomatal density by light (random effect of plant group & species)
+stomden_mod2 <- lmer(sqrt(sto_den) ~ canopy * plant_group + (1|species), 
+                     data=fernangio)
+plot(stomden_mod2)
 
-#excludes light bc not in both canopies
-stomden_mod <- lmer(sto_den ~ canopy + (1|plant_group/species), data=fernangio)
-visreg(stomden_mod)
+visreg(stomden_mod2,"canopy", by="plant_group")
 
-Anova(stomden_mod)
-summary(stomden_mod)
-r.squaredGLMM(stomden_mod)
-
-tukey_stom <- glht(stomden_mod, linfct = mcp(canopy = "Tukey"))
-stom_siglets <-cld(tukey_stom)
-stom_siglets2 <- stom_siglets$mcletters$Letters
-# not different overall, tons of group+ species variation
-
-stomden_mod2 <- lmer(sto_den ~ canopy * plant_group + (1|species), data=stom_dens)
-
-visreg(stomden_mod2)
 library(emmeans)
 emmip(stomden_mod2, canopy ~ plant_group)
 emmeans(stomden_mod2, pairwise ~ canopy : plant_group)
 
-Anova(stomden_mod2)
+Anova(stomden_mod2,type="3")
 summary(stomden_mod2)
 r.squaredGLMM(stomden_mod2)
 #interaction was not significant so dropped
 
-
-stomden_mod3 <- lmer(sto_den ~ canopy + plant_group + (1|species), data=stom_dens)
+stomden_mod3 <- lmer(sqrt(sto_den) ~ canopy + plant_group + (1|species), 
+                     data=fernangio)
 plot(stomden_mod3) # pretty good
 qqPlot(residuals(stomden_mod3)) # pretty good
+
+#checkmodels
+anova(stomden_mod2,stomden_mod3) #not different so use simple model
 
 Anova(stomden_mod3)
 summary(stomden_mod3)
@@ -61,10 +93,13 @@ tukey_stom3 <- glht(stomden_mod3, linfct = mcp(plant_group = "Tukey"))
 stom3_siglets <-cld(tukey_stom3)
 stom3_siglets3 <- stom3_siglets$mcletters$Letters
 
-#p = 0.01351 
-#0.3637892 0.8923573
-#  Angio      Fern Lycophyte 
-#   "b"       "a"      "ab" 
+#Angio  Fern 
+#"b"   "a"
+
+#p < 0.0001144 ***
+
+#R2m      R2c
+#[1,] 0.5475501 0.881687
 
 ##Ferns
 
