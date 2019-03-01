@@ -55,13 +55,11 @@ To generate comparative physiological data, we followed two procedures. First, w
 
 \
 
-Light response curves were conducted by decreasing the light intensity in the gas exchange cuvette in small step changes. For each light response curve, The CO~2~ in the leaf cuvette was set to a flow rate of 300 $\mu$mol s^-1^ and at ambient atmospheric [CO~2~] (400 ppm). Initial light measurements were made using the built-in quantum sensor to determine typical ambient light levels. These measurements were used to generate light response curves using appropriate light levels for high-light and low-light species separately. The light levels were not identical for each species, with several points being added or subtracted with each run. Broadly, light response curves followed the same template for high light or low light species. For high light species, light levels started at a PPFD of 1500 $\mu$mol m^-1^ s^-1^ and then consisted of 16 additional steps to O $\mu$mol m^-1^ s^-1^. For low light species, light response curves started at a PPFD of 500 $\mu$mol m^-1^ s^-1^, followed by 13 additional steps to O $\mu$mol m^-1^ s^-1^. Light response data for each curves was fit to a non-rectangular hyperbola model (Equation 6 in Lobo et al. 2013). The light compensation point (LCP) was calculated as the PPFD at which the net photosynthetic rate equalled zero from the linear phase of each light response curve. Quantum yeild ($\phi$) was calculated as the initial slope of the assimilation rate and mitochondrial respiration in the light (R~d~) at the step change where PPFD was 0 $\mu$mol m^-1^ s^-1^.
+Light response curves were conducted by decreasing the light intensity in the gas exchange cuvette in small step changes. For each light response curve, The CO~2~ in the leaf cuvette was set to a flow rate of 300 $\mu$mol s^-1^ and at ambient atmospheric [CO~2~] (400 ppm). Temperature was not explictly controlled in the leaf cuvette and leaf temperatures ranged from 27-30 &deg;C. Initial light measurements were made using the built-in quantum sensor to determine typical ambient light levels. These measurements were used to generate light response curves using appropriate light levels for high-light and low-light species separately. The light levels were not identical for each species, with several points being added or subtracted with each run. Broadly, light response curves followed the same template for high light or low light species. For high light species, light levels started at a PPFD of 1500 $\mu$mol m^-1^ s^-1^ and then consisted of 16 additional steps to O $\mu$mol m^-1^ s^-1^. For low light species, light response curves started at a PPFD of 500 $\mu$mol m^-1^ s^-1^, followed by 13 additional steps to O $\mu$mol m^-1^ s^-1^. Light response data for each curves was fit to a non-rectangular hyperbola model (Equation 6 in Lobo et al. 2013). The light compensation point (LCP) was calculated as the PPFD at which the net photosynthetic rate equalled zero from the linear phase of each light response curve. Quantum yeild ($\phi$) was calculated as the initial slope of the assimilation rate and mitochondrial respiration in the light (R~d~) at the step change where PPFD was 0 $\mu$mol m^-1^ s^-1^.
 
 \
 
 From these light response curves, we also developed an understanding of the levels at which low-light and high-light species reached light saturated photosynthetic rates. As a result, additional survey measurments were conducted at at a PPFD of 1200 $\mu$mol m^-1^ s^-1^ for high-light species and 600 $\mu$mol m^-1^ s^-1^ for low-light species. All other cuvette parameters were identical to those used for the light response curves.
-
-temperature?
 
 ## Foliar chemistry
 
@@ -74,6 +72,8 @@ Stomatal density (SD) was measured by directly counting stomata on the abaxial l
 ## Statistial analyses
 
 Linear mixed-effect models responses were used to test responses of functional traits to caetgorial fixed effects of plant group and canopy habitat. To test broad differnces in plant groups, species nested within canopy habitats were treated as random effects. To test differences between habitat types (ferns and angiosperms only) species was treated as a fixed effect. Explained variance (R^2^) of mixed models were computed as in Nakagawa and Schielzeth (2013), in which the marginal R^26 represents variance explained by fixed factors and the conditional R^2^ by both fixed and random factors. Tukey’s post-hoc test were performed in conjunction with ANOVA to determine which mean values of functional traits were different among plant groups and canopy habitats with the ‘multcomp’ package (Hothorn et al., 2008). T-tests were performed to test for differences between functional traits across canopy habitats within angioperm and fern plant groups. All tests of statistical significance were conducted at an α level of 0.05. All analyses were performed with R 3.5.1 [R cite].
+
+add vegan
 
 # Results
 
@@ -104,7 +104,10 @@ In closed canopy environments, variation in gas exchange parameters was largely 
 
 # Stoichiometry
 
-In open canopy environments, ferns had significantly lower phosphorus concentrations than those growing in closed canopies. Angiosperms had no significant difference across the light gradient. In both environments, ferns and lycophytes do not differ significantly, but both have significantly lower phosphorus levels than angiosperms (Figure asdf). Ferns in open light environments have significantly lower nitrogen levels than those ferns growing in closed light environments; the same is true of angiosperms. Lycophytes have significantly lower nitrogen levels than ferns and angiosperms, which do not statistically differ, in both light conditions (Figure adf). 
+In open canopy environments, ferns had significantly lower phosphorus concentrations than those growing in closed canopies. Angiosperms had no significant difference across the light gradient. In both environments, ferns and lycophytes do not differ significantly, but both have significantly lower phosphorus levels than angiosperms (Figure asdf). Ferns in open light environments have significantly lower nitrogen levels than those ferns growing in closed light environments; the same is true of angiosperms. 
+
+
+Across closed canopy habitats, Lycophytes have 45% lower foliar nitrogen levels than ferns and angiosperms, which do not statistically differ (*P* < 0.001). Conseqently, Lycpohtes had significantly higher CN ratios than ferns and angiosperms (*P* < 0.001). No differences were detected  between Lycophytes, ferns and angiosperms across closed canopy habitats.
 
 \
 

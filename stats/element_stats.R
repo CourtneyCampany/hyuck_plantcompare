@@ -18,7 +18,7 @@ phos <- chem[complete.cases(chem$p_perc),]
   phos$np_ratio <- with(phos, n_perc/p_perc)
 
 
-###comparative stats-----------------------
+###N in shade-----------------------
 Nshade <- droplevels(nitro[nitro$canopy == "Closed",])
   Nshade$percN <- Nshade$n_perc /100
   
