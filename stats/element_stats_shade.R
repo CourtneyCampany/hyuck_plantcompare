@@ -74,7 +74,7 @@ Pshade_nooutliers <- Pshade[Pshade$p_perc > .1 &
 boxplot(percP~plant_group, data=Pshade_nooutliers)
 
 #arcsin
-shade_P <-lmer(asin(sqrt(percP)) ~ plant_group + (1|species), data=Pshade_nooutliers)
+shade_P <- lmer(asin(sqrt(percP)) ~ plant_group + (1|species), data=Pshade_nooutliers)
 plot(shade_P)
 qqPlot(residuals(shade_P))
 
@@ -95,8 +95,13 @@ tukey_Pshade <- glht(shade_P, linfct = mcp(plant_group = "Tukey"))
 shade_Psiglets <-cld(tukey_Pshade)
 shade_Psiglets2 <- shade_Psiglets$mcletters$Letters
 
-#not different
+library(emmeans)
+emmeans(shade_P, pairwise ~ plant_group)
 
+mean(Pshade[Pshade$plant_group == "Angio", "percP"]) #0.0025
+mean(Pshade[Pshade$plant_group == "Fern", "percP"]) #0.0021
+mean(Pshade[Pshade$plant_group == "Lyco", "percP"]) #0.0019
+#24%lower in lycopphytes thatn angiosperms
 
 ###cn ratio----
 cn_shade <- droplevels(Nshade[complete.cases(Nshade$cn_ratio), ])
@@ -125,12 +130,15 @@ shade_CNsiglets2 <- shade_CNsiglets$mcletters$Letters
 
 ###NP_SHADE----
 np_shade <- droplevels(Pshade[complete.cases(Pshade$np_ratio), ])
+boxplot(np_ratio~plant_group, data=np_shade)
 
-np_shade_mod <- lmer(sqrt(np_ratio) ~ plant_group + (1|species), data=np_shade)
+np_shade_noout <- np_shade[np_shade$np_ratio < 30,]
+
+np_shade_mod <- lmer(sqrt(np_ratio) ~ plant_group + (1|species), 
+                     data=np_shade_noout)
 plot(np_shade_mod)
 qqPlot(residuals(np_shade_mod))
 
-##outlier
 Anova(np_shade_mod, type = "3")
 
 summary(np_shade_mod)
@@ -141,3 +149,6 @@ tukey_NPshade <- glht(np_shade_mod, linfct = mcp(plant_group = "Tukey"))
 shade_NPsiglets <-cld(tukey_NPshade)
 shade_NPsiglets2 <- shade_NPsiglets$mcletters$Letters
 ##not different
+
+emmeans(np_shade_mod, pairwise ~ plant_group)
+

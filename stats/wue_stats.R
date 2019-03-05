@@ -10,17 +10,17 @@ library(multcomp)
 
 #raw data
 photo <- read.csv("raw_data/photo_chem.csv")
-  #calculate PNUE on am area basis as we do not have sla
-  photo$pnue <- with(photo, Photo/n_perc)
+#calculate PNUE on am area basis as we do not have sla
+photo$wue <- with(photo, Photo/Trmmol)
 
-boxplot(pnue ~ plant_group, data=photo)
+boxplot(wue ~ plant_group, data=photo)
 
-pnue <- photo[complete.cases(photo$pnue),]
+wue <- photo[complete.cases(photo$wue),]
 
 ###comparative stats-----------------------
-shade <- droplevels(pnue[pnue$canopy == "Closed",])
+shade <- droplevels(wue[wue$canopy == "Closed",])
 
-shade_mod <-lmer(pnue~ plant_group + (1|species), data=shade)
+shade_mod <-lmer(sqrt(wue)~ plant_group + (1|species), data=shade)
 plot(shade_mod)
 qqPlot(residuals(shade_mod))
 
@@ -29,32 +29,38 @@ summary(shade_mod)
 r.squaredGLMM(shade_mod) 
 visreg(shade_mod)
 
+emmeans(shade_mod, pairwise ~ plant_group )
+
 tukey_shade <- glht(shade_mod, linfct = mcp(plant_group = "Tukey"))
 shade_siglets <-cld(tukey_shade)
 shade_siglets2 <- shade_siglets$mcletters$Letters
 
+mean(shade[shade$plant_group == "Lyco" , "wue"])#8.844896
+mean(shade[!shade$plant_group == "Lyco", "wue"])#4.691448
+#47.0% higher in lyco
+#0.005176 
 
 #canopy comparisions of sun shade with angio and ferns------
-fernangio <- droplevels(pnue[!pnue$plant_group %in% "Lyco", ])
-boxplot(pnue ~ species, data=fernangio)
+fernangio <- droplevels(wue[!wue$plant_group %in% "Lyco", ])
+boxplot(wue ~ plant_group, data=fernangio)
 
 #interaction between canopy and plant group
-pnue_mod2 <- lmer(sqrt(pnue) ~ canopy * plant_group + (1|species), data=fernangio)
-plot(pnue_mod2)
-qqPlot(residuals(pnue_mod2))
+wue_mod2 <- lmer(sqrt(wue) ~ canopy * plant_group + (1|species), data=fernangio)
+plot(wue_mod2)
+qqPlot(residuals(wue_mod2))
 
-visreg(photo_mod2, "canopy", by="plant_group")
+visreg(wue_mod2, "canopy", by="plant_group")
 
 library(emmeans)
-emmip(pnue_mod2, canopy ~ plant_group)
-emmeans(pnue_mod2, pairwise ~ canopy : plant_group)
+emmip(wue_mod2, canopy ~ plant_group)
+emmeans(wue_mod2, pairwise ~ canopy : plant_group)
 
-Anova(pnue_mod2, type="3")
-summary(pnue_mod2)
-r.squaredGLMM(pnue_mod2)
+Anova(wue_mod2, type="3")
+summary(wue_mod2)
+r.squaredGLMM(wue_mod2)
 #canopy
 #           R2m       R2c
-#[1,] 0.6329356 0.8328989
+#[1,] 0.02875255 0.715788
 
 mean(fernangio[fernangio$canopy == "Open" & fernangio$plant_group == "Angio", "Photo"])
 mean(fernangio[fernangio$canopy == "Open" & fernangio$plant_group == "Fern", "Photo"])
