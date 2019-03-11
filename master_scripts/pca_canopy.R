@@ -1,3 +1,5 @@
+source("master_scripts/plot_objects.R")
+
 ##merge all datasets into master for PCA
 library(dplyr)
 library(stringr)
@@ -35,14 +37,14 @@ hyuck <- inner_join(lrc, photo) %>% inner_join(stom_agg)
 
 #select data for PCA
 hyuck_nona <- hyuck[complete.cases(hyuck),]
-hyuck_nona$WUE <- with(hyuck_nona, Photo/Trmmol)
-hyuck_nona$CN <- with(hyuck_nona, c_perc/ n_perc)
-hyuck_nona$NP <- with(hyuck_nona, n_perc/ p_perc)
+  hyuck_nona$WUE <- with(hyuck_nona, Photo/Trmmol)
+  hyuck_nona$CN <- with(hyuck_nona, c_perc/ n_perc)
+  hyuck_nona$NP <- with(hyuck_nona, n_perc/ p_perc)
 
 hyuck_canopy <- hyuck_nona[!hyuck_nona$plant_group == "Lycophyte",]  
 
-#get rid of some parameters
-hyuck_pca <- droplevels(hyuck_canopy[,-c(1:2,6:7,9:13,16,19:21)])
+#get rid of some parameters (Asat is from aqcurve fitting so keep Photo)
+hyuck_pca <- droplevels(hyuck_canopy[,-c(1:3,6:7,9:13,16,19:21)])
 
 library(scales)
 #plant group colors
@@ -72,28 +74,28 @@ library(vegan)
 #principle compoent analysis with scales variances
 hyuck_rda<- rda(hyuck_pca,scale=T)
 # plot(hyuck_rda)
-summary(hyuck_rda)
-
-#nicer plot
+# summary(hyuck_rda)
 
 len <- .8
 
 sites <- scores(hyuck_rda, display='sites')
 spp <- scores(hyuck_rda, display='species')
 
-row.names(spp) <- c("An", "PHI","Rd", "LCP", "Photo", "N", "P", "gs", 
-                    "SD", "WUE", "CN", "NP")
-
 #plotting compare ferns and angio lyco in shade
-windows()
+# windows()
 par(mar=c(5,5,2,2), las=1,cex.axis=0.8)
-plot(sites,ylab="PC 2 (20.6 %)", xlab="PC 1 (36.4%)",type='n',
+plot(sites,ylab="PC 2 (21.8 %)", xlab="PC 1 (32.9%)",type='n',
      xlim=c(-2.25, 2.25), ylim=c(-2.25, 2.25))
 abline(v=0, lty='dashed')
 abline(h=0, lty='dashed')
+ordihull(hyuck_rda, groups = hyuck_canopy$canopy, lwd=2,draw='polygon',
+         col="grey",alpha=50, border = "black" ,lty=c(1,3))
 points(sites,cex=1.75, pch=hyuck_id$canopypch, col=hyuck_id$plantpcols)
-arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05)
-text(spp,labels=rownames(spp),cex=1.2)
-legend("topleft", legend= c("Angiosperms", "Ferns", "Closed", "Open"),
+arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05,lwd=1.5)
+text(spp,labels=pcalabs,cex=1)
+legend("bottomright", legend= c("Angiosperms", "Ferns", "Closed", "Open"),
        pch=c(16,16, 16, 1), col=c(plantcols[1], plantcols[2], "black", "black"),
-       inset=0.01, bty='n', cex=1,pt.cex=1)
+       inset=0.01, bty='n', cex=1,pt.cex=1,lty=c(0,0,1,3))
+
+# dev.copy2pdf(file= "output/pca_openclosed.pdf")
+# dev.off()

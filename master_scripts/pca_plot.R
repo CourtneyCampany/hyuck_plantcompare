@@ -1,3 +1,5 @@
+source("master_scripts/plot_objects.R")
+
 ##merge all datasets into master for PCA
 library(dplyr)
 library(stringr)
@@ -38,16 +40,21 @@ hyuck_nona <- hyuck[complete.cases(hyuck),]
   hyuck_nona$WUE <- with(hyuck_nona, Photo/Trmmol)
   hyuck_nona$CN <- with(hyuck_nona, c_perc/ n_perc)
   hyuck_nona$NP <- with(hyuck_nona, n_perc/ p_perc)
+  hyuck_nona$seed <- as.factor(ifelse(hyuck_nona$plant_group == "Angiosperm",
+                            "seed","non-seed"))
   
 hyuck_shade <- hyuck_nona[hyuck_nona$canopy == "Closed",]  
   
-#get rid of some parameters
-hyuck_pca <- droplevels(hyuck_shade[,-c(1:2,6:7,9:13,16,19:21)])
+#get rid of some parameters (Asat is from aqcurve fitting so keep Photo)
+hyuck_pca <- droplevels(hyuck_shade[,-c(1:3,6:7,9:13,16,19:21,26)])
 
 library(scales)
 #plant group colors
 plantcols <- c(alpha("dodgerblue", .8), alpha("firebrick", .8), 
                alpha("forestgreen", .8))
+
+
+pgcols <- c(plantcols[2], plantcols[3], plantcols[1])
 
 #site variables for ease with ponts in pca
 hyuck_id <- hyuck_shade[,12:13]
@@ -58,7 +65,7 @@ hyuck_id$plantcols <- ifelse(hyuck_id$plant_group == "Angiosperm", plantcols[2],
 hyuck_id$plantcols <- ifelse(hyuck_id$plant_group == "Fern", plantcols[3],
                              hyuck_id$plantcols)
 
-#length of shade and id dfrs should be same!
+#double chekc that length of shade and id dfrs should be same!
 
 library(vegan)
 
@@ -76,28 +83,51 @@ hyuck_rda<- rda(hyuck_pca,scale=T)
 # plot(hyuck_rda)
 # summary(hyuck_rda)
 
-#nicer plot
-
+#manuscript plot
 len <- .8
 
 library(scales)
 sites <- scores(hyuck_rda, display='sites')
 spp <- scores(hyuck_rda, display='species')
 
-row.names(spp) <- c("An", "PHI","Rd", "LCP", "Photo", "N", "P", "gs", 
-                    "SD", "WUE", "CN", "NP")
+# row.names(spp) <- pcalabs
 
 #plotting compare ferns and angio lyco in shade
-windows()
-par(mar=c(5,5,2,2), las=1,cex.axis=0.8)
-plot(sites,ylab="PC 2 (16.0 %)", xlab="PC 1 (41.5%)",type='n',
+# windows()
+par(mar=c(5,5,1,1), las=1,cex.axis=0.8)
+plot(sites,ylab="PC 2 (16.7 %)", xlab="PC 1 (38.7%)",type='n',
      xlim=c(-2.25, 2.25), ylim=c(-2.25, 2.25))
 abline(v=0, lty='dashed')
 abline(h=0, lty='dashed')
+ordihull(hyuck_rda, groups = hyuck_shade$plant_group, lwd=2,draw='polygon',
+         col=pgcols,alpha=50, border = pgcols)
+arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05, lwd=1.5)
 points(sites,cex=1.75, bg=hyuck_id$plantcols, pch=21)
-arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05)
-text(spp,labels=rownames(spp),cex=1.2)
+text(spp,labels=pcalabs,cex=1)
 legend("topleft", legend= c("Angiosperms", "Ferns", "Lycophytes"),
-       pch=21, pt.bg=c(plantcols[2], plantcols[3], plantcols[1]),
-       inset=0.01, bty='n', cex=1,pt.cex=1)
+       pch=21, inset=0.01, bty='n', cex=1,pt.cex=1.25, pt.bg=pgcols)
+
+# dev.copy2pdf(file= "output/pca_shade1.pdf")
+# dev.off()
+
+##same plot but with seed vs nonseed grouping
+# windows()
+# par(mar=c(5,5,1,1), las=1,cex.axis=0.8)
+# plot(sites,ylab="PC 2 (16.7 %)", xlab="PC 1 (38.7%)",type='n',
+#      xlim=c(-2.25, 2.25), ylim=c(-2.25, 2.25))
+# abline(v=0, lty='dashed')
+# abline(h=0, lty='dashed')
+# ordihull(hyuck_rda, groups = hyuck_shade$seed, lwd=2,draw='polygon',
+#          col="grey",alpha=50, border = c("black",pgcols[1]))
+# points(sites,cex=1.75, bg=hyuck_id$plantcols, pch=21)
+# arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05, lwd=1.5)
+# text(spp,labels=pcalabs,cex=1)
+# legend("topleft", 
+#        legend= c("Angiosperms", "Ferns", "Lycophytes", "Seed", "Non-seed"),
+#        inset=0.001, bty='n', cex=1,pt.cex=1.25,lty=c(0,0,0,1,1),
+#        pch=c(rep(21,3),NA,NA),pt.bg=c(pgcols), pt.lwd=1.25,
+#        col=c(rep("black",3),pgcols[1],"black"))
+       
+# dev.copy2pdf(file= "output/pca_shade2.pdf")
+# dev.off()
                         

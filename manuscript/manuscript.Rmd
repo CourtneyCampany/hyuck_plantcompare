@@ -1,5 +1,5 @@
 ---
-title: "A Comparative Ecophysiological Survey of Lycophytes, Ferns, and Seed Plants"
+title: "Adaptability of ecophysiological traits define how plant lineages make a living in shaded environments "
 author: 
 date: 
 output:
@@ -12,8 +12,25 @@ csl: new-phytologist.csl
 bibliography: references.bib
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_knit$set(root.dir = '../')
+\
+Courtney E. Campany^1^, coauthors^1^ and Eddie Watkins Jr. ^1^
+
+\
+^1^ Hawkesbury Institute for the Environment, Western Sydney University, Locked Bag 1797, Penrith, NSW, Australia
+
+\
+Corresponding author: C.E. Campany, email: courtneycampany@gmail.com, telephone: +1 607 279 7020
+
+Running Head: Shade ecophysiology of plant lineages
+
+```{r, results="asis", echo=FALSE, warning=FALSE}
+library(knitr)
+opts_knit$set(root.dir = '../')
+```
+
+```{r global data/sourcing, echo=FALSE, message=FALSE, warning=FALSE}
+# Set Flag to include figures in text or not.
+includeFigs <- FALSE
 ```
 
 
@@ -105,8 +122,7 @@ Overall, ferns and angiosperms in open habitats had 64.2% higher g~s~ than compa
 
 In closed canopy environments, variation in gas exchange parameters was largely due to individual species variation instead of functional differences between all three plant groups. No differences between A~n~ were detected between between the three plant groups, with a majority of the variation associated with the random effect of individual species. Stomatal conductance in angiosperms was higher than in ferns and lycophytes **P* = 0.001). Water-use efficiency was 47 % higher in lycophytes than ferns and angiosperms (*P* = 0.005), while ferns and angiosperms where statiscally similar.
 
-# Stoichiometry (##can use pairwise for specific p values: see leaf P below)
-
+## Stoichiometry (##can use pairwise for specific p values: see leaf P below)
 
 Ferns and angiosperms species in open light environments had marginally lower foliar nitrogen content compared to similar species in growing in closed light environments (-17.2 %, *P* = 0.072), with a large proportion of variation attributed to individual species differences. Neither ferns nor angiosperms species differed in their CN ratios across the two light environments. Across all habitats, the CN ratio of ferns was 20 % higher than in angiosperms (*P* = 0.0325). No differences in foliar P content were detected between open and closed canopies for either ferns or angiosperms. Across all habitats, foliar P content was 22.1 % higher in angiosperms than in ferns (*P* =  0.034). Neither ferns nor angiosperms species differed in their NP ratios across the two light environments. Across all habitats, the NP ratio was statistically similar for ferns and angiosperms.
 
@@ -127,3 +143,31 @@ In closed canopy environments, no differenes in stomatal density were detected a
 The relationship between A~n~ and foliar nitrogen content depended on both plant group and canopy type (canopy x plant group, *P* = 0.028). Specifically, the postive slopes of the relationship between A~n~ and N differed for ferns and angiosperms in open canopys, while no relationship beween A~n~ and N was found for either group in closed canopies.
 
 fixed vs random...
+
+
+# Discussion 
+
+# Acknowledgements
+We thank 
+
+# Tables {.unnumbered}
+**Table 1**.
+
+\
+**Table 2**.
+
+# Figures {.unnumbered}
+
+```{r allometry, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs}
+source("master_scripts/pca_plot.R")
+```  
+**Figure 1**. Redundancy analysis of measured functional traits across con-occuring angiosperms and fern species in open and shaded habitats. With the 12 measured variables, number% of the trait variation was accounted for in two dimensions. Variables include net photosynthesis (A~n~), stomatal conductance (g~s~), instantaneous water use efficiency (WUE), stomatal density (SD), the light compensation point (LCP), quantum yield ($$\phi$$), dark respiration (R~d~), foliar nitrogen (N) and phosphorus (P) content, the leaf carbon to nitrogen ratio (C:N) and the leaf nitrogen to phosphorus ratio (N:P).
+
+\
+
+```{r allometry, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs}
+source("master_scripts/pca_canopy.R")
+```  
+**Figure 2**. Redundancy analysis of measured functional traits across con-occuring angiosperms fern and lycopyte species in shaded habitats.
+
+# References {.unnumbered}
