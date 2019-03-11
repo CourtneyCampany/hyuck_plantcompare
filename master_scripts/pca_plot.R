@@ -48,13 +48,6 @@ hyuck_shade <- hyuck_nona[hyuck_nona$canopy == "Closed",]
 #get rid of some parameters (Asat is from aqcurve fitting so keep Photo)
 hyuck_pca <- droplevels(hyuck_shade[,-c(1:3,6:7,9:13,16,19:21,26)])
 
-library(scales)
-#plant group colors
-plantcols <- c(alpha("dodgerblue", .8), alpha("firebrick", .8), 
-               alpha("forestgreen", .8))
-
-
-pgcols <- c(plantcols[2], plantcols[3], plantcols[1])
 
 #site variables for ease with ponts in pca
 hyuck_id <- hyuck_shade[,12:13]

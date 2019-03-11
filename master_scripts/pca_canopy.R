@@ -46,16 +46,12 @@ hyuck_canopy <- hyuck_nona[!hyuck_nona$plant_group == "Lycophyte",]
 #get rid of some parameters (Asat is from aqcurve fitting so keep Photo)
 hyuck_pca <- droplevels(hyuck_canopy[,-c(1:3,6:7,9:13,16,19:21)])
 
-library(scales)
-#plant group colors
-plantcols <- c(alpha("firebrick", .8), alpha("forestgreen", .8))
-
 #site variables for ease with ponts in pca
 hyuck_id <- hyuck_canopy[,12:13]
 
 ##with alpha
-hyuck_id$plantpcols <- ifelse(hyuck_id$plant_group == "Angiosperm", plantcols[1],
-                             plantcols[2])
+hyuck_id$plantcols <- ifelse(hyuck_id$plant_group == "Angiosperm", plantcols[2],
+                             plantcols[3])
 hyuck_id$canopypch <- ifelse(hyuck_id$canopy == "Closed", 16,1)
 
 #length of shade and id dfrs should be same!
@@ -82,6 +78,7 @@ sites <- scores(hyuck_rda, display='sites')
 spp <- scores(hyuck_rda, display='species')
 
 #plotting compare ferns and angio lyco in shade
+
 # windows()
 par(mar=c(5,5,2,2), las=1,cex.axis=0.8)
 plot(sites,ylab="PC 2 (21.8 %)", xlab="PC 1 (32.9%)",type='n',
@@ -90,11 +87,11 @@ abline(v=0, lty='dashed')
 abline(h=0, lty='dashed')
 ordihull(hyuck_rda, groups = hyuck_canopy$canopy, lwd=2,draw='polygon',
          col="grey",alpha=50, border = "black" ,lty=c(1,3))
-points(sites,cex=1.75, pch=hyuck_id$canopypch, col=hyuck_id$plantpcols)
+points(sites,cex=1.75, pch=hyuck_id$canopypch, col=hyuck_id$plantcols)
 arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05,lwd=1.5)
 text(spp,labels=pcalabs,cex=1)
 legend("bottomright", legend= c("Angiosperms", "Ferns", "Closed", "Open"),
-       pch=c(16,16, 16, 1), col=c(plantcols[1], plantcols[2], "black", "black"),
+       pch=c(16,16, 16, 1), col=c(plantcols2[2], plantcols2[3], "black", "black"),
        inset=0.01, bty='n', cex=1,pt.cex=1,lty=c(0,0,1,3))
 
 # dev.copy2pdf(file= "output/pca_openclosed.pdf")

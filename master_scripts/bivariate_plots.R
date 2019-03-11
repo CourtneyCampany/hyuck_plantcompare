@@ -1,4 +1,5 @@
 source("master_scripts/plot_objects.R")
+source("functions/basic_functions.R")
 
 library(plotrix)
 library(visreg)
@@ -86,3 +87,6 @@ ablineclip(fernopen_fix[[1]], fernopen_fix[[2]],lwd=2,col=cols2[2],
 #angioopen
 ablineclip(angioopen_fix[[1]], angioopen_fix[[2]],lwd=2,col=cols2[1],
            x1=.95, x2=3.66)
+
+#here is the predlines example
+predline(asatgs_mod_fern, col="grey20",lwd=2, lty=2)

@@ -30,10 +30,10 @@ opts_knit$set(root.dir = '../')
 
 ```{r global data/sourcing, echo=FALSE, message=FALSE, warning=FALSE}
 # Set Flag to include figures in text or not.
-includeFigs <- FALSE
+includeFigs <- TRUE
 ```
 
-
+/
 
 1) Differences in ecophysiology of groups in same habitat (seed vs angio)
 2) similarities or differnces between open/closed with ferns and lycophytes
@@ -151,23 +151,51 @@ fixed vs random...
 We thank 
 
 # Tables {.unnumbered}
-**Table 1**.
+
+**Table 1**. Species list.
+
+```{r speciestable, echo=FALSE,warning=FALSE, message=FALSE}}
+library(pixiedust)
+speciestab <- read.csv("raw_data/species_list.csv")
+
+dust(speciestab[1:4])%>%
+  sprinkle_colnames("Species", "Plant Lineage", "Collection Site", 
+                    "Canopy") %>%
+  sprinkle(rows= 1, part="head",bold=TRUE)%>%
+  sprinkle_print_method("markdown")
+```
 
 \
 **Table 2**.
 
 # Figures {.unnumbered}
 
-```{r allometry, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs}
+```{r pca1, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs,warning=FALSE, message=FALSE}
 source("master_scripts/pca_plot.R")
 ```  
-**Figure 1**. Redundancy analysis of measured functional traits across con-occuring angiosperms and fern species in open and shaded habitats. With the 12 measured variables, number% of the trait variation was accounted for in two dimensions. Variables include net photosynthesis (A~n~), stomatal conductance (g~s~), instantaneous water use efficiency (WUE), stomatal density (SD), the light compensation point (LCP), quantum yield ($$\phi$$), dark respiration (R~d~), foliar nitrogen (N) and phosphorus (P) content, the leaf carbon to nitrogen ratio (C:N) and the leaf nitrogen to phosphorus ratio (N:P).
+**Figure 1**. Redundancy analysis of measured functional traits across con-occuring angiosperms and fern species in open and shaded habitats. With the 12 measured variables, number% of the trait variation was accounted for in two dimensions. Variables include net photosynthesis (A~n~), stomatal conductance (g~s~), instantaneous water use efficiency (WUE), stomatal density (SD), the light compensation point (LCP), quantum yield ($\phi$), dark respiration (R~d~), foliar nitrogen (N) and phosphorus (P) content, the leaf carbon to nitrogen ratio (C:N) and the leaf nitrogen to phosphorus ratio (N:P).
 
 \
 
-```{r allometry, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs}
+```{r pca2, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs,warning=FALSE, message=FALSE}
 source("master_scripts/pca_canopy.R")
 ```  
 **Figure 2**. Redundancy analysis of measured functional traits across con-occuring angiosperms fern and lycopyte species in shaded habitats.
+
+
+```{r interaction, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs, warning=FALSE, message=FALSE}
+source("master_scripts/interaction_plots.R")
+```  
+**Figure 3**. Differences in mean physiological traits between co-occuring angiosperms and fern species in open light and closed habitats.
+
+```{r lyco, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs, warning=FALSE, message=FALSE}
+source("master_scripts/lycophytes_plot.R")
+```  
+**Figure 4**. Differences in mean physiological traits between lycophytes species that are constrained to only shade habitats and ferns and angiosperms.
+
+```{r seed, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs, warning=FALSE, message=FALSE}
+source("master_scripts/seed_nonseed_plots.R")
+```  
+**Figure 5**. Differences in mean physiological traits between co-occuring seed (angiosperms) and non-seed plant species (ferns + lycophytes) in shade habitats.
 
 # References {.unnumbered}
