@@ -154,7 +154,7 @@ We thank
 
 **Table 1**. Species list.
 
-```{r speciestable, echo=FALSE,warning=FALSE, message=FALSE}}
+```{r, speciestable, echo=FALSE,warning=FALSE, message=FALSE}
 library(pixiedust)
 speciestab <- read.csv("raw_data/species_list.csv")
 
@@ -166,7 +166,18 @@ dust(speciestab[1:4])%>%
 ```
 
 \
-**Table 2**.
+**Table 2**. Pooled ecophysiological traits for different plant lineages in open light and closed habitats.
+
+```{r, datatable, echo=FALSE,warning=FALSE, message=FALSE}
+traitstab <- read.csv("manuscript/pooled_data.csv")
+physymb <- '\u03D5'
+
+dust(traitstab)%>%
+  sprinkle_colnames("Plant Lineage", "Canopy", "*A*~n~","*g*~s~","Foliar N",
+                    "Foliar P", "C:N", "N:P", "SD", physymb, "*R*~d~", "LCP") %>%
+  sprinkle(rows= 1, part="head",bold=TRUE)%>%
+  sprinkle_print_method("markdown")
+```
 
 # Figures {.unnumbered}
 
@@ -188,14 +199,22 @@ source("master_scripts/interaction_plots.R")
 ```  
 **Figure 3**. Differences in mean physiological traits between co-occuring angiosperms and fern species in open light and closed habitats.
 
+
 ```{r lyco, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs, warning=FALSE, message=FALSE}
 source("master_scripts/lycophytes_plot.R")
 ```  
 **Figure 4**. Differences in mean physiological traits between lycophytes species that are constrained to only shade habitats and ferns and angiosperms.
 
+
 ```{r seed, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs, warning=FALSE, message=FALSE}
 source("master_scripts/seed_nonseed_plots.R")
 ```  
 **Figure 5**. Differences in mean physiological traits between co-occuring seed (angiosperms) and non-seed plant species (ferns + lycophytes) in shade habitats.
+
+
+```{r nitro, fig.width=7, fig.height=7, echo=FALSE,  dev="png", dpi=600,eval=includeFigs, warning=FALSE, message=FALSE}
+source("master_scripts/bivariate_plots.R")
+```  
+**Figure 6**. Postive relationship between photosynthesis and foliar nitrogen content exists for angiosperms and fern species in open light habitat, but not in shade habitats
 
 # References {.unnumbered}

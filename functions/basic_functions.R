@@ -1,3 +1,8 @@
+#mean and se functions with na.rm = true as default
+se <- function(x) sqrt(var(x,na.rm=TRUE)/length(na.omit(x)))
+mean2 <- function(x) mean(x, na.rm=TRUE)
+
+
 ###mtexti for reading direction arrangement
 mtexti <- function(text, side, off = 0.25,
                    srt = if(side == 2) 90  else
