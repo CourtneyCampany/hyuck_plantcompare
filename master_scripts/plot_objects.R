@@ -25,7 +25,7 @@ wuelab <- expression(atop(WUE, paste("(",mu*mol," CO" ["2"]," mmol ",
 
 #list of labels for pca plots
 pcalabs <- c(philab, resplab,"LCP", photolab2, "N", "P", condlab2, "SD", "WUE", 
-             "C:N", "N:P")
+             "PNUE", "N:P")
 
 
 library(scales)

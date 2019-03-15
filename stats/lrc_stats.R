@@ -18,6 +18,10 @@ lrc <- read.csv("calculated_data/AQ_params.csv") %>%
        merge(treatments[,c(2,4:5)]) %>%
        mutate(canopyplant = interaction(canopy, plant_group))
 
+lrc_agg <- doBy::summaryBy(LCP ~ plant_group + canopy, data = lrc, FUN=mean)
+boxplot(LCP ~ species, data=lrc)
+boxplot(LCP ~ plant_group, data=lrc)
+
 
 fern <- droplevels(lrc[lrc$plant_group == "Fern", ])
   #length(unique(levels(fern$species)))

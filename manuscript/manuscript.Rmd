@@ -13,14 +13,15 @@ bibliography: references.bib
 ---
 
 \
-Courtney E. Campany^1^, coauthors^1^ and Eddie Watkins Jr. ^1^
+Courtney E. Campany^1^, coauthors^1^ and James E. Watkins Jr. ^1^
 
 \
-^1^ Hawkesbury Institute for the Environment, Western Sydney University, Locked Bag 1797, Penrith, NSW, Australia
+^1^ Department of Biology, Colgate University, Hamilton, NY, USA
 
 \
-Corresponding author: C.E. Campany, email: courtneycampany@gmail.com, telephone: +1 607 279 7020
+Corresponding author: C.E. Campany, email: courtneycampany@gmail.com, 
 
+\
 Running Head: Shade ecophysiology of plant lineages
 
 ```{r, results="asis", echo=FALSE, warning=FALSE}
@@ -33,12 +34,6 @@ opts_knit$set(root.dir = '../')
 includeFigs <- TRUE
 ```
 
-/
-
-1) Differences in ecophysiology of groups in same habitat (seed vs angio)
-2) similarities or differnces between open/closed with ferns and lycophytes
-3) Do these tell us why lycophtes dont go to open ?
-
 # Abstract
 
 /
@@ -47,19 +42,19 @@ Key Words:
 
 # Introduction
 
-Our understanding of the ecophysiology of ferns and lycophytes is limited. However, recent studies have shown that these two groups possess an unusual set of functional traits that likely influence their ecology (Brodribb, Watkins, Pinterman, Franks). For example, Watkins has demonstrated that the gametophyte generations of many tropical ferns are markedly desiccation-tolerant, with tolerance being closely linked to ecological preference. In seed plants, desiccation tolerance has been essentially lost from vegetative tissues. Additional work on ferns indicates a tight link between carbon and nitrogen relations with species distribution (Watkins 2005). Work on fern hydraulics is in its early stages; however, a study on tropical ferns suggests that ferns have a significantly more resistive vascular system than seed plants. A recent study on temperate species proposes that ferns are more similar to gymnosperms in their hydraulic properties (Watkins). 
+Our understanding of the ecophysiology of ferns and lycophytes is limited. However, recent studies have shown that these two groups possess an unusual set of functional traits that likely influence their ecology (Brodribb, Watkins, Pinterman, Franks, campany). For example, Watkins has demonstrated that the gametophyte generations of many tropical ferns are markedly desiccation-tolerant, with tolerance being closely linked to ecological preference. In seed plants, desiccation tolerance has been essentially lost from vegetative tissues. Additional work on ferns indicates a tight link between carbon and nitrogen relations with species distribution (Watkins 2005). Work on fern hydraulics is in its early stages; however, a study on tropical ferns suggests that ferns have a significantly more resistive vascular system than seed plants. A recent study on temperate species proposes that ferns are more similar to gymnosperms in their hydraulic properties (Watkins). 
 
 \
 
-	A primary controlling factor in fern hydraulics is stomatal function. Recently, a series of studies have shown that stomatal control of ferns and lycophytes differs from seed plants. Early evidence on fern and lycophyte stomata indicates that these groups have inefficient stomatal systems. Ongoing work by Brodribb et al. is suggesting that ferns and lycophytes may possess a hydropassive mechanism which influences stomatal opening and closing. Unlike seed plants, fern and lycophyte stomata fail to close in response to abscisic acid (ABA) addition. This significant new discovery suggests that at least two fundamentally different mechanisms of stomatal function have evolved in early plants. This, in turn, may impact the differential distribution of ferns and lycophytes relative to seed plants.
+	A primary controlling factor in fern hydraulics is stomatal function. A series of elegeant studies have shown that stomatal control of ferns and lycophytes differs fundamentally from seed plants. Evidence on fern and lycophyte stomata indicates that these groups have inefficient stomatal systems, likely possessing a hydropassive mechanism which influences stomatal opening and closing (many cites). Specifically, unlike seed plants, fern and lycophyte stomata fail to close in response to abscisic acid (ABA) addition (many cites). Additionally, recent evidence also suggests that co-occuring tropical ferns and lycophytes optimize thier ecophysiology differently (Campany). Consequently, the evolution or adaptation of physiolgoical traits may impact the differential distribution of ferns,lycophytes and seed plants to eath other. 
 	
 \
 	
-	Studies that examine the comparative physiology of ferns and lycophytes to seed plants are rare. Therefore, it is difficult to derive widely applicable hypotheses of the ecophysiological behavior of these groups. From the few studies we were able to find, ferns and lycophytes appear to have lower photosynthetic rates than seed plants. This would suggest that ferns may be at a competitive disadvantage when growing with seed plants. However, none of these studies have systematically compared the physiology of these groups when growing in similar habitats. 
+	Studies that examine the comparative physiology of ferns and lycophytes to seed plants are rare. Therefore, it is difficult to derive widely applicable hypotheses of the ecophysiological behavior of these groups. From the limited number of present studies, ferns and lycophytes appear to have lower photosynthetic rates than seed plants (cite). This would suggest that non-seed plants may be at a competitive disadvantage when growing alongside seed plants. However, none of these studies have systematically compared the physiology of these groups when growing in similar habitats.
 	
 \
 	
-	The goal of the current study is to examine the comparative physiology of a number of temperate ferns and lycophytes to angiosperms. We specifically examined several physiological parameters in a pairwise comparison between a fern or a lycophyte and an angiosperm in identical habitats. Given recent suggestions on inefficient stomatal functions, we hypothesized that ferns would have lower photosynthetic rates and stomatal conductance values in comparison to the nearby angiosperms. This, in turn, would impact aspects of leaf morphology (stomatal density), physiology (chlorophyll concentration), nutrient relations (N and P), and carbon relations. We speculate that the differences in physiological function may affect the ecology of these ferns, lycophytes, and angiosperms. 
+	The goal of the current study is to examine the comparative physiology of a number of temperate ferns and lycophytes to angiosperms. We specifically examined several physiological parameters in comparison between co-occurring ferns, lycophytes and  angiosperm in identical closed canopy habitats. In a pairwise camoparison, we also evaluated the potential of fern and angiosperm species to adapt to open-light habitats. Given increasing evidence of inefficient stomatal functions in non-seed plants, we hypothesized that ferns and lycophytes would have lower photosynthetic rates and stomatal conductance values in comparison to the nearby angiosperms. This, in turn, would impact aspects of leaf anatomy (stomatal density), nutrient relations (N and P), and water use efficiency. We speculate that the differences in physiological function also affect the ecology of lycophytes in a manner that prevents them from establishing in full sun environments.
 	
 #Methods
 
@@ -140,12 +135,22 @@ In closed canopy environments, no differenes in stomatal density were detected a
 
 ## Bivariate relationships between functional traits
 
-The relationship between A~n~ and foliar nitrogen content depended on both plant group and canopy type (canopy x plant group, *P* = 0.028). Specifically, the postive slopes of the relationship between A~n~ and N differed for ferns and angiosperms in open canopys, while no relationship beween A~n~ and N was found for either group in closed canopies.
+The relationship between A~n~ and foliar nitrogen content depended on both plant group and canopy type (canopy x plant group, *P* = 0.028). Specifically, the postive slopes of the relationship between A~n~ and N differed for ferns and angiosperms in open canopys, while no relationship beween A~n~ and N was found for either group in closed canopies (Figure 6).
 
-fixed vs random...
-
+No relationships.....
 
 # Discussion 
+
+## Comparative ecophysiology in the shade
+
+## Differential adaption to open habitats
+
+## Functional ecology of lycophytes
+
+## Ecophysiological trait variation in seed plants
+
+## Summary
+
 
 # Acknowledgements
 We thank 

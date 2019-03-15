@@ -38,7 +38,7 @@ hyuck <- inner_join(lrc, photo) %>% inner_join(stom_agg)
 #select data for PCA
 hyuck_nona <- hyuck[complete.cases(hyuck),]
   hyuck_nona$WUE <- with(hyuck_nona, Photo/Trmmol)
-  hyuck_nona$CN <- with(hyuck_nona, c_perc/ n_perc)
+  hyuck_nona$PNUE <- with(hyuck_nona, Photo/ n_perc)
   hyuck_nona$NP <- with(hyuck_nona, n_perc/ p_perc)
   hyuck_nona$seed <- as.factor(ifelse(hyuck_nona$plant_group == "Angiosperm",
                             "seed","non-seed"))
@@ -103,7 +103,7 @@ legend("topleft", legend= c("Angiosperms", "Ferns", "Lycophytes"),
 # dev.copy2pdf(file= "output/pca_shade1.pdf")
 # dev.off()
 
-##same plot but with seed vs nonseed grouping
+#same plot but with seed vs nonseed grouping
 # windows()
 # par(mar=c(5,5,1,1), las=1,cex.axis=0.8)
 # plot(sites,ylab="PC 2 (16.7 %)", xlab="PC 1 (38.7%)",type='n',
@@ -115,12 +115,11 @@ legend("topleft", legend= c("Angiosperms", "Ferns", "Lycophytes"),
 # points(sites,cex=1.75, bg=hyuck_id$plantcols, pch=21)
 # arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05, lwd=1.5)
 # text(spp,labels=pcalabs,cex=1)
-# legend("topleft", 
+# legend("topleft",
 #        legend= c("Angiosperms", "Ferns", "Lycophytes", "Seed", "Non-seed"),
 #        inset=0.001, bty='n', cex=1,pt.cex=1.25,lty=c(0,0,0,1,1),
 #        pch=c(rep(21,3),NA,NA),pt.bg=c(pgcols), pt.lwd=1.25,
 #        col=c(rep("black",3),pgcols[1],"black"))
-       
+# 
 # dev.copy2pdf(file= "output/pca_shade2.pdf")
 # dev.off()
-                        

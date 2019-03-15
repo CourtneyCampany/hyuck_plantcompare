@@ -3,7 +3,7 @@
 lrc <- read.csv("raw_data/lightresponse.csv")
 lrc$id <- paste(lrc$species, lrc$individual, sep="-")
 
-source("light_response_function.R")
+source("functions/light_response_function.R")
 
 ##fit light response curves for every individual
 

@@ -38,7 +38,7 @@ hyuck <- inner_join(lrc, photo) %>% inner_join(stom_agg)
 #select data for PCA
 hyuck_nona <- hyuck[complete.cases(hyuck),]
   hyuck_nona$WUE <- with(hyuck_nona, Photo/Trmmol)
-  hyuck_nona$CN <- with(hyuck_nona, c_perc/ n_perc)
+  hyuck_nona$PNUE <- with(hyuck_nona, Photo/ n_perc)
   hyuck_nona$NP <- with(hyuck_nona, n_perc/ p_perc)
 
 hyuck_canopy <- hyuck_nona[!hyuck_nona$plant_group == "Lycophyte",]  
