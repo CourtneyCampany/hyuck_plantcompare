@@ -96,6 +96,14 @@ For bivariate trait relationships, responses of dependent variables were analyse
 
 # Results
 
+## Ecophysiology among plant lineages and habitats
+
+We first explored how each of 10 measured functional traits varied and were distributed among co-occuring ferns, Angiosperms and lycophytes in closed canopy habitats. In total, 52.9 % of the trait variation was accounted for in two dimensions, encompassing different resource economics, physiology and anatomy of the surveryed taxa. Interestingly, there was minimal overlap among component scores for angiosperms species compared to spore-bearing ferns and lycophytes. Species associations with functional traits were noticeably divergent between flowering plants and spore-bearing speies in shaded habitats (Fig. 1). Specifically, angiosperms species were associated with gas exchange, anatomical and stoichiometric functional traits related to optimizing carboxylation.  In contrast, lycophytes and fern species were most associated with traits related to maintaining postive carbon balance under low light.
+
+Next, we explored how the same suite of 10 functional traits were distributed among open and closed habitats in both angiosperms and ferns. In total, 55.9 % of the trait variation was accounted for in two dimensions.  Component scores for angiosperms and fern species broadly diverged across open-light and closed canopy habitats, however, associations with functional traits in open-light habitats were stronger for angiosperms (how do I say this?) (Figure 2). Specifically, angiosperms appear more plastic in their ability to upregulate traits related to photosynthetic gas exchange with increased light availability.
+
+Overall, these diverging relationships with measured functional traits suggest a highly variable in situ ecophysiology for coexisting angiosperm, fern and lycophyte taxa. Indeed, we detected important differences between....  (Table 2).
+
 ## Light response curve parameters
 
 Overall, ferns and angiosperms had similar $\phi$ across open and low-light habitats. Quantum yields were also equivalent within angiosperm and fern species groups between open and low-light habitats. Shifts in R~d~ between open and low-light habitats differed for angiosperms and ferns (habitats x plant group, *P* < 0.001). Specifically, R~d~ in angiosperms was 80.6 % greater in open compared to low-light habitats (t=-4.197, *P* = 0.001). Alternatively, R~d~ in ferns was 44.0 % greater in low-light compared to open habitats (t=-2.97, p=0.006). Similarly, shifts in LCP between open and low-light habitats differed for angiosperms and ferns (habitats x plant group, *P* < 0.001). Specifically, the LCP in angiosperms was 79.2 % greater in open compared to low-light habitats (t=-3.5998, *P* = 0.005). Alternatively, the LCP in ferns was 39.7 % greater in low-light compared to open habitats (t=2.1814, *P* = 0.040).

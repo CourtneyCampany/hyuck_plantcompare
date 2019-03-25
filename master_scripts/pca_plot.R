@@ -38,7 +38,6 @@ hyuck <- inner_join(lrc, photo) %>% inner_join(stom_agg)
 #select data for PCA
 hyuck_nona <- hyuck[complete.cases(hyuck),]
   hyuck_nona$WUE <- with(hyuck_nona, Photo/Trmmol)
-  hyuck_nona$PNUE <- with(hyuck_nona, Photo/ n_perc)
   hyuck_nona$NP <- with(hyuck_nona, n_perc/ p_perc)
   hyuck_nona$seed <- as.factor(ifelse(hyuck_nona$plant_group == "Angiosperm",
                             "seed","non-seed"))
@@ -46,7 +45,7 @@ hyuck_nona <- hyuck[complete.cases(hyuck),]
 hyuck_shade <- hyuck_nona[hyuck_nona$canopy == "Closed",]  
   
 #get rid of some parameters (Asat is from aqcurve fitting so keep Photo)
-hyuck_pca <- droplevels(hyuck_shade[,-c(1:3,6:7,9:13,16,19:21,26)])
+hyuck_pca <- droplevels(hyuck_shade[,-c(1:3,6:7,9:13,16,19:21,25)])
 
 
 #site variables for ease with ponts in pca
@@ -88,7 +87,7 @@ spp <- scores(hyuck_rda, display='species')
 #plotting compare ferns and angio lyco in shade
 # windows()
 par(mar=c(5,5,1,1), las=1,cex.axis=0.8)
-plot(sites,ylab="PC 2 (16.7 %)", xlab="PC 1 (38.7%)",type='n',
+plot(sites,ylab="PC 2 (18.4 %)", xlab="PC 1 (34.5%)",type='n',
      xlim=c(-2.25, 2.25), ylim=c(-2.25, 2.25))
 abline(v=0, lty='dashed')
 abline(h=0, lty='dashed')

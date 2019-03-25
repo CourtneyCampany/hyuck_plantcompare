@@ -38,7 +38,6 @@ hyuck <- inner_join(lrc, photo) %>% inner_join(stom_agg)
 #select data for PCA
 hyuck_nona <- hyuck[complete.cases(hyuck),]
   hyuck_nona$WUE <- with(hyuck_nona, Photo/Trmmol)
-  hyuck_nona$PNUE <- with(hyuck_nona, Photo/ n_perc)
   hyuck_nona$NP <- with(hyuck_nona, n_perc/ p_perc)
 
 hyuck_canopy <- hyuck_nona[!hyuck_nona$plant_group == "Lycophyte",]  
@@ -81,7 +80,7 @@ spp <- scores(hyuck_rda, display='species')
 
 # windows()
 par(mar=c(5,5,2,2), las=1,cex.axis=0.8)
-plot(sites,ylab="PC 2 (21.8 %)", xlab="PC 1 (32.9%)",type='n',
+plot(sites,ylab="PC 2 (22.3 %)", xlab="PC 1 (33.6%)",type='n',
      xlim=c(-2.25, 2.25), ylim=c(-2.25, 2.25))
 abline(v=0, lty='dashed')
 abline(h=0, lty='dashed')
