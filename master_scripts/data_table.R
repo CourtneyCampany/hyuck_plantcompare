@@ -7,16 +7,14 @@ treatments <- read.csv("raw_data/species_list.csv")
 
 ##photosynthesis and leaf chemistry data-------------
 photochem <- read.csv("raw_data/photo_chem.csv")
-  photochem$cn_ratio <- with(photochem, c_perc/n_perc)
-  photochem$percN <- photochem$n_perc /100
   photochem$np_ratio <- with(photochem, n_perc/p_perc)
-  photochem$percP <- photochem$p_perc /100
+  photochem$wue <- with(photochem, Photo/Trmmol)
 
-photochem_mean <- summaryBy(Photo+Cond+percN+percP+cn_ratio+np_ratio ~ 
+photochem_mean <- summaryBy(Photo+Cond+n_perc+p_perc+np_ratio+wue ~ 
                               plant_group+canopy, 
                               data=photochem, FUN=mean2)
 
-photochem_se <- summaryBy(Photo+Cond+percN+percP+cn_ratio+np_ratio ~ 
+photochem_se <- summaryBy(Photo+Cond+n_perc+p_perc+np_ratio+wue ~ 
                               plant_group+canopy, 
                             data=photochem, FUN=se)
 
@@ -50,17 +48,17 @@ photo <- data.frame(paste0(sprintf("%2.1f", round(photochem_mean[,3], 1)),
 cond <- data.frame(paste0(sprintf("%1.2f", round(photochem_mean[,4], 2)), 
                            " (", sprintf("%1.3f", round(photochem_se[,4],3)),")"))
 
-nitro <- data.frame(paste0(sprintf("%1.2f", round(photochem_mean[,5], 2)), 
-                          " (", sprintf("%1.3f", round(photochem_se[,5],3)),")"))
+nitro <- data.frame(paste0(sprintf("%1.1f", round(photochem_mean[,5], 1)), 
+                          " (", sprintf("%1.2f", round(photochem_se[,5],2)),")"))
 
-phos <- data.frame(paste0(sprintf("%1.3f", round(photochem_mean[,6], 3)), 
-                          " (", sprintf("%1.4f", round(photochem_se[,6],4)),")"))
+phos <- data.frame(paste0(sprintf("%1.2f", round(photochem_mean[,6], 2)), 
+                          " (", sprintf("%1.3f", round(photochem_se[,6],3)),")"))
 
-cn <- data.frame(paste0(sprintf("%2.1f", round(photochem_mean[,7], 1)), 
-                          " (", sprintf("%2.2f", round(photochem_se[,7],2)),")"))
+np <- data.frame(paste0(sprintf("%2.1f", round(photochem_mean[,7], 1)), 
+                       " (", sprintf("%2.2f", round(photochem_se[,7],2)),")"))
 
-np <- data.frame(paste0(sprintf("%2.1f", round(photochem_mean[,8], 1)), 
-                       " (", sprintf("%2.2f", round(photochem_se[,8],2)),")"))
+wue <- data.frame(paste0(sprintf("%1.1f", round(photochem_mean[,8], 1)), 
+                        " (", sprintf("%1.2f", round(photochem_se[,8],2)),")"))
 
 sd <- data.frame(paste0(sprintf("%2.1f", round(stom_mean[,3], 1)), 
                        " (", sprintf("%2.2f", round(stom_mean[,4],2)),")"))
@@ -82,11 +80,14 @@ data_tab <- cbind(plantcanopy, photo)
 data_tab <- cbind(data_tab, cond)
 data_tab <- cbind(data_tab, nitro)
 data_tab <- cbind(data_tab, phos)
-data_tab <- cbind(data_tab, cn)
 data_tab <- cbind(data_tab, np)
+data_tab <- cbind(data_tab, wue)
 data_tab <- cbind(data_tab, sd)
 data_tab <- cbind(data_tab, phi)
 data_tab <- cbind(data_tab, rd)
 data_tab <- cbind(data_tab, lcp)
+
+names(data_tab) <- c("lineage", "canopy", "photosyn", "gs", "nitro", "phos", "np",
+                     "wue", "sd", "phi", "rd", "lcp")
 
 write.csv(data_tab, "manuscript/pooled_data.csv", row.names = FALSE)
