@@ -30,7 +30,9 @@ anitro_mod2 <- lmer(Photo~n_perc + canopy * plant_group + (1|species),
 
 # emmip(anitro_mod2, canopy ~ plant_group)
 # emmeans(anitro_mod2, pairwise ~ canopy : plant_group)
-# r.squaredGLMM(anitro_mod2)
+getr2 <- r.squaredGLMM(anitro_mod2)
+margr2 <- round(getr2[[1]],2)
+condr2 <- round(getr2[[2]],2)
 
 ##simple models for ablineclip, paired with full model
 fern_photoN_open <- lm(Photo~n_perc, data=fern[fern$canopy == "Open",])
@@ -71,6 +73,11 @@ angioopen <- droplevels(chem[chem$plant_group == "Angio" & chem$canopy == "Open"
 par(mar=c(5,5,1,1))
 plot(Photo~n_perc, data=chem, ylab=photolab, xlab = "Foliar Nitrogen  (%)",
      type='n', ylim=c(0,23), xlim=c(0,5.5))
+
+#here is the predlines example
+predline(angio_photoN_open, col=plantcols[2],lwd=2, lty=2)
+predline(fern_photoN_open, col=plantcols[3],lwd=2, lty=2)
+
 points(Photo~n_perc, data=angio, pch=c(21,22)[canopy], bg=plantcols[2], cex=1.25)
 points(Photo~n_perc, data=fern, pch=c(21,22)[canopy], bg=plantcols[3], cex=1.25)
 #fixed effects 
@@ -83,13 +90,12 @@ points(Photo~n_perc, data=fern, pch=c(21,22)[canopy], bg=plantcols[3], cex=1.25)
 # ablineclip(angioopen_fix[[1]], angioopen_fix[[2]],lwd=2,col=cols2[1],
 #            x1=.95, x2=3.66)
 
-#here is the predlines example
-predline(angio_photoN_open, col=plantcols[2],lwd=2, lty=2)
-predline(fern_photoN_open, col=plantcols[3],lwd=2, lty=2)
-
 legend("topleft", legend = c("Angiosperms", "Ferns", "Closed", "Open"),
-       pch = c(21, 21, 16, 15), bty='n', inset=.01,
-       pt.bg = c(plantcols[2],plantcols[3]))
+       pch = c(21, 21, 21, 22), bty='n', inset=.01,
+       pt.bg = c(plantcols[2],plantcols[3], rep("grey80",2)))
+
+text(5, 22.5, bquote(paste(R[cond]^{"2"}," = ", .(margr2))))
+text(5, 20.5, bquote(paste(R[marg]^{"2"}," = ", .(condr2))))
 
 # dev.copy2pdf(file= "output/photonitro_plot.pdf")
 # dev.off()

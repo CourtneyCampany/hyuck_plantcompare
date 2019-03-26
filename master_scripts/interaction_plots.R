@@ -72,10 +72,8 @@ lines(x=c(1,2), y=c(photo_agg[3,3],photo_agg[4,3]), lwd=2.5, col="forestgreen")
 lines(x=c(1,2), y=c(photo_agg[1,3],photo_agg[2,3]), lwd=2.5, col="firebrick")
 axis(1, at=1:2, labels = FALSE)
 axis(2, las=1)
-legend("topleft", c("Angiosperms", "Ferns"), pch=19, 
-       col=c(plantcols[2], plantcols[3]),
-                    bty='n', inset=.01)
-# text(x=1, y=14, label = "canopy x plant group,\n P = 0.043")
+
+text(x=0.5, y=15, label = "A", cex=1.25)
 
 #cond (add model stats)
 par(mar=c(0,0,1,5))
@@ -94,6 +92,11 @@ lines(x=c(1,2), y=c(cond_agg[1,3],cond_agg[2,3]), lwd=2.5, col="firebrick")
 axis(1, at=1:2, labels = FALSE)
 axis(4, las=1)
 mtexti(condlab, 4, outer=TRUE, cex=1, off=.6)
+text(x=0.5, y=.4, label = "B", cex=1.25)
+
+legend("topright", c("Angiosperms", "Ferns"), pch=19, 
+        col=c(plantcols[2], plantcols[3]),
+        bty='n', inset=.01)
 
 #rd (add model stats)
 par(mar=c(5,5,0,0))
@@ -111,6 +114,7 @@ lines(x=c(1,2), y=c(rdagg[3,3],rdagg[4,3]), lwd=2.5, col="forestgreen")
 lines(x=c(1,2), y=c(rdagg[1,3],rdagg[2,3]), lwd=2.5, col="firebrick")
 axis(1, at=1:2, labels = c("Closed", "Open"))
 axis(2, las=1)
+text(x=0.5, y=1.09, label = "C", cex=1.25)
 
 #LCP (add model stats)
 par(mar=c(5,0,0,5))
@@ -129,6 +133,7 @@ lines(x=c(1,2), y=c(lcp_agg[1,3],lcp_agg[2,3]), lwd=2.5, col="firebrick")
 axis(1, at=1:2, labels = c("Closed", "Open"))
 axis(4, las=1)
 mtexti(lcplab, 4, outer=TRUE, cex=1, off=.6)
+text(x=0.5, y=20.7, label = "D", cex=1.25)
 
-# dev.copy2pdf(file= "output/fernangio_phys.pdf")
+# dev.copy2pdf(file= "output/interactions.pdf")
 # dev.off()

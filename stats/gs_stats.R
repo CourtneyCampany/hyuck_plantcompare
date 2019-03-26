@@ -7,7 +7,7 @@ library(multcomp)
 library(pbkrtest)
 
 
-#photosynthesis
+#gs
 gs <- read.csv("raw_data/photo_chem.csv")
 gs$canopyplant <- interaction(gs$canopy, gs$plant_group)
 
@@ -36,9 +36,8 @@ visreg(shade_mod)
 
 tukey_shade <- glht(shade_mod, linfct = mcp(plant_group = "Tukey"))
 shade_siglets <-cld(tukey_shade)
-shade_siglets2 <- shade_siglets$mcletters$Letters
 #Angio  Fern  Lyco 
-#"b"  "ab"   "a"
+#"b"  "a"   "a"
 
 
 #canopy comparisions of sun shade with angio and ferns
