@@ -41,6 +41,7 @@ visreg(N_mod, "canopy", by="plant_group")
 library(emmeans)
 emmip(N_mod, canopy ~ plant_group)
 emmeans(N_mod, pairwise ~ canopy : plant_group)
+emmeans(N_mod, "canopy")
 
 Anova(N_mod, type="3")
 summary(N_mod)

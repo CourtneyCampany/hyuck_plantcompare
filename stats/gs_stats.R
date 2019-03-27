@@ -40,7 +40,8 @@ shade_siglets <-cld(tukey_shade)
 #"b"  "a"   "a"
 
 
-#canopy comparisions of sun shade with angio and ferns
+#canopy comparisions of sun shade with angio and ferns-------
+
 fernangio <- droplevels(gs[!gs$plant_group %in% "Lyco", ])
 agricolae::skewness(sqrt(fernangio$Cond))
 
@@ -105,3 +106,17 @@ t.test(Cond ~ canopy, data=angio)
 #0.09781456           0.29560109 
 # t = -4.157, df = 21.105, p-value = 0.0004425
 #66.9%
+
+
+#match figure yes
+mean(fernangio[fernangio$canopy == "Open" & 
+                 fernangio$plant_group == "Fern", "Cond"])
+mean(fernangio[fernangio$canopy == "Closed" & 
+                 fernangio$plant_group == "Fern", "Cond"], na.rm=TRUE)
+
+#match figure yes
+mean(fernangio[fernangio$canopy == "Open" & 
+                 fernangio$plant_group == "Angio", "Cond"])
+mean(fernangio[fernangio$canopy == "Closed" & 
+                 fernangio$plant_group == "Angio", "Cond"], na.rm=TRUE)
+#61%higher in angio open

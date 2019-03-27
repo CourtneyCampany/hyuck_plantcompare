@@ -36,7 +36,7 @@ visreg(shade_mod)
 
 tukey_shade <- glht(shade_mod, linfct = mcp(plant_group = "Tukey"))
 shade_siglets <-cld(tukey_shade)
-shade_siglets2 <- shade_siglets$mcletters$Letters
+#similar between plant groups, large random species effects
   
 
 #canopy comparisions of sun shade with angio and ferns
@@ -58,8 +58,10 @@ r.squaredGLMM(photo_mod2)
 #           R2m       R2c
 #[1,] 0.5301052 0.8926862
 
-mean(fernangio[fernangio$canopy == "Open" & fernangio$plant_group == "Angio", "Photo"])
-mean(fernangio[fernangio$canopy == "Open" & fernangio$plant_group == "Fern", "Photo"])
+mean(fernangio[fernangio$canopy == "Open" & 
+                 fernangio$plant_group == "Angio", "Photo"])
+mean(fernangio[fernangio$canopy == "Open" & 
+                 fernangio$plant_group == "Fern", "Photo"])
 
 
 #t-test between groups
@@ -76,23 +78,15 @@ t.test(Photo ~ canopy, data=angio)
 # t = -6.9651, df = 20.368, p-value = 8.347e-07
 
 
-#excludes light bc not in both canopies
-# photo_mod <- lmer(Photo ~ canopy + (1|plant_group/species), data=fernangio)
-# visreg(photo_mod)
-#   
-# Anova(photo_mod)
-# summary(photo_mod)
-# r.squaredGLMM(photo_mod)
-#   
-# tukey_photo <- glht(photo_mod, linfct = mcp(canopy = "Tukey"))
-# photo_siglets <-cld(tukey_photo)
-# photo_siglets2 <- photo_siglets$mcletters$Letters
-#   # photosynthesis way higher in open canopies
-# #Closed   Open 
-# # "a"    "b"
-# #p < 0.0001
-# #R2m       R2c
-# #[1,] 0.3440435 0.8933528
-# mean(fernangio[fernangio$canopy == "Open", "Photo"])
-# mean(fernangio[fernangio$canopy == "Closed", "Photo"])
-# #54.8% higher in full sun
+#match figure yes
+mean(fernangio[fernangio$canopy == "Open" & 
+                 fernangio$plant_group == "Fern", "Photo"])
+mean(fernangio[fernangio$canopy == "Closed" & 
+                 fernangio$plant_group == "Fern", "Photo"], na.rm=TRUE)
+
+#match figure yes
+mean(fernangio[fernangio$canopy == "Open" & 
+                 fernangio$plant_group == "Angio", "Photo"])
+mean(fernangio[fernangio$canopy == "Closed" & 
+                 fernangio$plant_group == "Angio", "Photo"], na.rm=TRUE)
+#61%higher in angio open

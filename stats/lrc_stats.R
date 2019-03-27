@@ -11,7 +11,7 @@ library(stringr)
 treatments <- read.csv("raw_data/species_list.csv")
 
 
-#photosynthesis
+#aq curve
 lrc <- read.csv("calculated_data/AQ_params.csv") %>%
        mutate(species = as.factor(str_remove(ID, "-[[:digit:]]")),
               individual =  str_remove(ID, ".*-")) %>%
@@ -193,9 +193,10 @@ r.squaredGLMM(rd_mod2)
 #           R2m       R2c
 #[1,] 0.4931456 0.5970595
 
-mean(fernangio[fernangio$plant_group == "Fern" , "Phi"], na.rm=TRUE) #.0692
-mean(fernangio[fernangio$plant_group == "Angiosperm" , "Phi"], na.rm=TRUE) #.0620
-#really close
+mean(fernangio[fernangio$plant_group == "Angiosperm" & fernangio$canopy == "Open", 
+               "Rd"], na.rm=TRUE) #0.7687267
+mean(fernangio[fernangio$plant_group == "Angiosperm" & fernangio$canopy == "Closed", 
+               "Rd"], na.rm=TRUE) #0.1487808
 
 #lcp
 
@@ -218,3 +219,7 @@ mean(fernangio[fernangio$plant_group == "Fern" , "LCP"], na.rm=TRUE)
 mean(fernangio[fernangio$plant_group == "Angiosperm" , "LCP"], na.rm=TRUE)
 #really close
 
+mean(fernangio[fernangio$plant_group == "Angiosperm" & fernangio$canopy == "Open", 
+               "LCP"], na.rm=TRUE) #12.99204
+mean(fernangio[fernangio$plant_group == "Angiosperm" & fernangio$canopy == "Closed", 
+               "LCP"], na.rm=TRUE) #2.698899

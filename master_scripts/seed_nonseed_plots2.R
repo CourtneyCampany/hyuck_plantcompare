@@ -29,17 +29,18 @@ lrc_shade <-  droplevels(lrc[!lrc$canopy == "Closed",])
 
 #seed vs nonseed panel figure
 # windows()
-par(mfrow=c(2,2), mgp=c(3,.75,0))
+par(mfrow=c(2,2), mgp=c(3,.75,0),oma=c(4,5,1,5))
 
 #stomatal conductance
-par(mar=c(0,5,1,0))
-boxplot(Cond ~ seed, data=chem_closed, ylab=condlab,xaxt='n',yaxt='n',
+par(mar=c(0,0,0,0))
+boxplot(Cond ~ seed, data=chem_closed, ylab="",xaxt='n',yaxt='n',
         ylim=c(0,.3), outline=FALSE, col=seedcols)
 axis(2, las=1)
 text(x=0.5, y=.3, label = "A", cex=1.25)
+mtext(side=2, at=.15, line=3,text=condlab, xpd=TRUE, las=3, cex=.9)
 
 #phosphorus
-par(mar=c(0,0,1,5))
+par(mar=c(0,0,0,0))
 boxplot(p_perc ~ seed, data=phos_closed, ylab="", xaxt='n', yaxt='n',
         ylim=c(0,0.5),  col=seedcols)
 axis(4,las=1)
@@ -47,19 +48,20 @@ mtexti("Foliar Phosphorus  (%)", 4, outer=TRUE, cex=1, off=.65)
 text(x=0.5, y=0.5, label = "B", cex=1.25)
 
 #light compensation point
-par(mar=c(5,5,0,0))
-boxplot(LCP ~ seed, data=lrc_shade, ylab=lcplab,outline=FALSE,yaxt='n',
-        ylim=c(0.,27),  col=c("white", plantcols2[2]))
+par(mar=c(0,0,0,0))
+boxplot(LCP ~ seed, data=lrc_shade, ylab="",outline=FALSE,yaxt='n',
+        ylim=c(0,27),  col=c("white", plantcols2[2]))
 axis(2, las=1)
 text(x=0.5, y=26.95, label = "C", cex=1.25)
+mtext(side=2, at=13.5, line=3,text=lcplab, xpd=TRUE, las=3, cex=.9)
 
 #dark respiration
-par(mar=c(5,0,0,5))
+par(mar=c(0,0,0,0))
 boxplot(Rd ~ seed, data=lrc_shade, ylab="", outline=FALSE,
         ylim=c(0,1.75),  col=c("white", plantcols2[2]),yaxt='n')
 axis(4,las=1)
 mtexti(resplab2, 4, outer=TRUE, cex=1, off=.65)
 text(x=0.5, y=1.74, label = "D", cex=1.25)
 
-# dev.copy2pdf(file= "output/seed_nonseed_plot.pdf")
+# dev.copy2pdf(file= "output/seed_nonseed_plot2.pdf")
 # dev.off()
