@@ -86,21 +86,21 @@ spp <- scores(hyuck_rda, display='species')
 
 #plotting compare ferns and angio lyco in shade
 # windows()
-# jpeg(filename = "output/pcashade.jpeg",
-#      width = 6, height = 6, units = "in", res= 600)
+jpeg(filename = "manuscript/pcashade.jpeg",
+     width = 7, height = 7, units = "in", res= 600)
 
-par(mar=c(5,5,1,1), las=1,cex.axis=0.8)
+par(mar=c(5,5,1,1), las=1,cex.axis=1.25, cex.lab = 1.5)
 plot(sites,ylab="PC 2 (18.4 %)", xlab="PC 1 (34.5%)",type='n',
      xlim=c(-2.25, 2.25), ylim=c(-2.25, 2.25))
 abline(v=0, lty='dashed')
 abline(h=0, lty='dashed')
-ordihull(hyuck_rda, groups = hyuck_shade$plant_group, lwd=2,draw='polygon',
+ordihull(hyuck_rda, groups = hyuck_shade$plant_group, lwd=2.5,draw='polygon',
          col=pgcols,alpha=50, border = pgcols)
-arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05, lwd=1.5)
-points(sites,cex=1.75, bg=hyuck_id$plantcols, pch=21)
-text(spp,labels=pcalabs,cex=1)
+arrows(0, 0, len * spp[, 1],  len * spp[, 2], length = 0.05, lwd=3.5)
+points(sites,cex=2, bg=hyuck_id$plantcols, pch=21)
+text(spp,labels=pcalabs,cex=1.5)
 legend("topleft", legend= c("Angiosperms", "Ferns", "Lycophytes"),
-       pch=21, inset=0.01, bty='n', cex=1,pt.cex=1.25, pt.bg=pgcols)
+       pch=21, inset=0.01, bty='n', cex=1,pt.cex=1.5, pt.bg=pgcols)
 
 # dev.copy2pdf(file= "output/pca_shade1.pdf")
  # dev.off()
@@ -124,4 +124,4 @@ legend("topleft", legend= c("Angiosperms", "Ferns", "Lycophytes"),
 #        col=c(rep("black",3),pgcols[1],"black"))
 # 
 # dev.copy2pdf(file= "output/pca_shade2.pdf")
-# dev.off()
+dev.off()

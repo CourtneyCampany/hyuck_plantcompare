@@ -1,5 +1,5 @@
 ---
-title: "Plasticity of ecophysiological traits structure how herbaceous plant lineages make a living in shaded environments "
+title: "Plasticity of ecophysiological traits structure how herbaceous plant lineages persist in shaded environments "
 author: 
 date: 
 output:
@@ -52,40 +52,51 @@ Key Words:
 
 # Introduction
 
-Our understanding of the ecophysiology of ferns and lycophytes is limited. However, recent studies have shown that these two groups possess an unusual set of functional traits that likely influence their ecology (Brodribb, Watkins, Pinterman, Franks, campany). For example, Watkins has demonstrated that the gametophyte generations of many tropical ferns are markedly desiccation-tolerant, with tolerance being closely linked to ecological preference. In seed plants, desiccation tolerance has been essentially lost from vegetative tissues. Additional work on ferns indicates a tight link between carbon and nitrogen relations with species distribution (Watkins 2005). Work on fern hydraulics is in its early stages; however, a study on tropical ferns suggests that ferns have a significantly more resistive vascular system than seed plants. A recent study on temperate species proposes that ferns are more similar to gymnosperms in their hydraulic properties (Watkins). 
+The earliest angiosperm ancestors shared ecophysiological traits associated with shady, disturbed, and wet habitats [@feild_dark_2004]. Plasticity in these traits, developed through natural selection, then allowed angiosperms to expand into brighter and more evaporative terrestrial habitats characterized as water-limited instead of light limited [@feild_ecophysiology_2007]. The same degree of flexibility has not been widely detected in the modern diversification of spore-bearing plant taxa. As a consequence, the Cretaceous radiation of angiosperms initiated a tremendous shift in of terrestrial plant communities, which included reciprocal trends in diversity of spore-bearing plants [@lupia_comparing_1999]. Most modern taxa of spore-bearing plants are now believed to have diversified following this angiosperm radiation, so that angiosperm dominant communities now define the ecological niches that spore-bearing plants must inhabit [@schneider_ferns_2004].
 
 \
+Our understanding of the ecophysiology of the modern spore-bearing plants, including ferns and lycophytes, is limited. However, studies have shown that these two groups possess unique functional traits and physiological behaviors that likely influence their ecology. Ferns have been shown to be more conservative in stomatal closure, relative to xylem dysfunction, than angiosperms [@brodribb_stomatal_2004]. Xylem of ferns have been shown to have greater hydraulic efficiency than conifer or angiosperm xylem, while still maintaining comparable resistance to cavitation [@pittermann_structure-function_2011]. Microphylls of lycophytes also likely led to distinct ecophysiology between ferns with megaphylls, even in shared habitats [@campany_convergence_2019]. Last, ferns and lycophytes have limited flexibility to water stress, compared to angiosperms, as a consequence of a passive stomatal function [@mcadam_ancestral_2013]. These studies reveal several remaining canalized functions in ferns and lycophytes, which undoubtedly affect how spore-bearing taxa persist in a now angiosperm dominated landscape.
 
-A primary controlling factor in fern hydraulics is stomatal function. A series of elegant studies have shown that stomatal control of ferns and lycophytes differs fundamentally from seed plants. Evidence on fern and lycophyte stomata indicates that these groups have inefficient stomatal systems, likely possessing a hydro-passive mechanism which influences stomatal opening and closing (many cites). Specifically, unlike seed plants, fern and lycophyte stomata fail to close in response to abscisic acid (ABA) addition (many cites). Additionally, recent evidence also suggests that co-occurring tropical ferns and lycophytes optimize their ecophysiology differently (Campany). Consequently, the evolution or adaptation of physiological traits may impact the differential distribution of ferns,lycophytes and seed plants to each other. 
+\
+Studies that examine that broadly comparate the physiology of ferns and lycophytes to seed plants are rare. Therefore, it is difficult to derive widely applicable hypotheses of the ecophysiological behavior of these groups. From the present studies available, ferns and lycophytes appear to have lower photosynthetic rates than seed plants [@brodribb_leaf_2005; @brodribb_leaf_2007; @carriqui_diffusional_2015; @campany_convergence_2019]. This would suggest that non-seed plants may be at a competitive disadvantage when growing alongside seed plants. However, only @carriqui_diffusional_2015 has systematically compared the physiology of these groups when growing in similar habitats (a common garden experiment). 
+
+
+
+
+ Free-sporing plants exhibit trends reciprocal to those of angiosperms of equivalent latitudes
+
+
+@watkins_ecological_2007 has demonstrated that the gametophyte generations of many tropical ferns are markedly desiccation-tolerant, with tolerance being closely linked to ecological preference. In seed plants, desiccation tolerance has been essentially lost from vegetative tissues. Additional work on ferns indicates a tight link between carbon and nitrogen relations with species distribution (Watkins 2005). Work on fern hydraulics is in its early stages; however, a study on tropical ferns suggests that ferns have a significantly more resistive vascular system than seed plants. A recent study on temperate species proposes that ferns are more similar to gymnosperms in their hydraulic properties (Watkins). 
+
+**add these cites as evidence, not as cites in opening sentence.
+
+\
+A primary controlling factor in fern hydraulics is stomatal function. A series of elegant studies have shown that stomatal control of ferns and lycophytes differs fundamentally from seed plants [@ruszala_land_2011; @mcadam_fern_2012] . Evidence on fern and lycophyte stomata indicates that these groups have inefficient stomatal systems, likely possessing a hydro-passive mechanism which influences stomatal opening and closing. Specifically, unlike seed plants, fern and lycophyte stomata fail to close in response to abscisic acid (ABA) addition [@mcadam_fern_2012]. Additionally, recent evidence also suggests that co-occurring tropical ferns and lycophytes optimize their ecophysiology differently [@campany_convergence_2019]. Consequently, the evolution or adaptation of physiological traits may impact the differential distribution of ferns,lycophytes and seed plants to each other. 
+	
+
 	
 \
+The goal of this study is to examine the comparative ecophysiology of a number of temperate ferns and lycophytes to angiosperms. First, we compared a suite of plant functional traits between co-occurring herbaceous ferns, lycophytes and  angiosperm in identical closed canopy habitats. In a pairwise comparison, we then evaluated the potential of fern and angiosperm species to adapt to open-light habitats. Given increasing evidence of canalized physiological function in non-seed plants, we hypothesized that ferns and lycophytes would have lower photosynthetic rates and stomatal conductance values in comparison to the nearby angiosperms. This, in turn, would impact aspects of leaf anatomy, nutrient relations, and water use efficiency. We also predict that more severe canalized physiological function affects the ecology of lycophytes in a manner that prevents them from establishing in full sun environments.
 	
-Studies that examine the comparative physiology of ferns and lycophytes to seed plants are rare. Therefore, it is difficult to derive widely applicable hypotheses of the ecophysiological behavior of these groups. From the limited number of present studies, ferns and lycophytes appear to have lower photosynthetic rates than seed plants (cite). This would suggest that non-seed plants may be at a competitive disadvantage when growing alongside seed plants. However, none of these studies have systematically compared the physiology of these groups when growing in similar habitats.
-	
-\
-	
-The goal of this study is to examine the comparative ecophysiology of a number of temperate ferns and lycophytes to angiosperms. First, we compared a suite of plant functional traits between co-occurring herbaceous ferns, lycophytes and  angiosperm in identical closed canopy habitats. In a pairwise comparison, we then evaluated the potential of fern and angiosperm species to adapt to open-light habitats. Given increasing evidence of inefficient stomatal functions in non-seed plants, we hypothesized that ferns and lycophytes would have lower photosynthetic rates and stomatal conductance values in comparison to the nearby angiosperms. This, in turn, would impact aspects of leaf anatomy, nutrient relations, and water use efficiency. We also predict that canalized physiological function affects the ecology of lycophytes in a manner that prevents them from establishing in full sun environments.
-	
-#Methods
+# Methods
 
 ## Study site and species
 
 This study was conducted at two sites in upstate New York, USA. Data for most species were gathered at the Edmund Niles Hyuck Preserve (ENHP), characterized by mixed hardwood hemlock forests along the Helderberg escarpment in the foothills of the Catskill mountain range. Data from the second site were gathered at a forested natural area on the campus of Colgate University in Hamilton, New York, situated in the foothills surrounding the Chenango Valley. Forests at the Colgate University site are younger, but consist of a similar species richness and composition as ENHP. 
 
 \
-
 We examined a series of fern, lycophyte, and angiosperm species at both sites (Table 1). To examine ferns relative to light-analogous angiosperms, we first selected a fern species and then located the nearest neighboring angiosperm growing in similar habitat conditions. Surveyed angiosperm taxa were always herbaceous and similar in size and stature to the neighboring fern species. At the ENHP, we sampled across two distinct habitats: understory low-light areas (closed) and open canopy high-light areas (open). At the Colgate University site, additional low-light fern and lycophyte species were surveyed. 
+
+**HOW MANY**
 
 ## Physiological Measurements
 
 To generate comparative physiological data, we followed two procedures. First, we generated a series of detailed light response curves for a select number of species from each plant group (fern = 5, angiosperm = 5, lycophytes = 3). Light response curves were conducted for five individuals of each species. Second, to increase our comparative sample size, we surveyed light saturated rates of photosynthesis (A~n~) and stomatal conductance (g~s~) for additional species at the ENHP. All gas exchange parameters were generated using the LiCor 6400 XT Photosynthesis System (LiCor Biosciences, Lincoln, NE USA). 
 
 \
-
 Light response curves were conducted by decreasing the light intensity in the 2x3 cm gas exchange cuvette in small step changes. For each light response curve, The CO~2~ in the leaf cuvette was set to a flow rate of 300 $\mu$mol s^-1^ and at ambient atmospheric [CO~2~] (400 ppm). Temperature was not explicitly controlled in the leaf cuvette. Cuvette leaf temperatures ranged from 27-30 &deg;C and leaf vapor pressure deficit (VPD) averaged 1.37&pm;0.40 kPa. Initial light measurements were made using the built-in quantum sensor to determine typical ambient light levels. These measurements were used to generate light response curves using appropriate light levels for high-light and low-light species separately. The light levels were not identical for each species, with several points being added or subtracted with each run. Broadly, light response curves followed the same template for high light or low light species. For high light species, light levels started at a PPFD of 1500 $\mu$mol m^-1^ s^-1^ and then consisted of 16 additional steps to O $\mu$mol m^-1^ s^-1^. For low light species, light response curves started at a PPFD of 500 $\mu$mol m^-1^ s^-1^, followed by 13 additional steps to O $\mu$mol m^-1^ s^-1^. Light response data for each curves was fit to a non-rectangular hyperbola model (Equation 6 in @lobo_fitting_2013). The light compensation point (LCP) was calculated as the PPFD at which the net photosynthetic rate equaled zero from the linear phase of each light response curve. Quantum yield ($\phi$) was calculated as the initial slope of the assimilation rate and mitochondrial respiration in the light (R~d~) at the step change where PPFD was 0 $\mu$mol m^-1^ s^-1^.
 
 \
-
 From these light response curves, we also developed an understanding of the levels at which low-light and high-light species reached light saturated photosynthetic rates. As a result, additional point measurements of leaf gas exchange were conducted at at a PPFD of 1200 $\mu$mol m^-1^ s^-1^ for high-light species and 600 $\mu$mol m^-1^ s^-1^ for low-light species. All other cuvette parameters were identical to those used for the light response curves. Leaf-level instantaneous water use efficiency (WUE) was calculated as A~n~ divided by leaf transpiration from gas exchange measurements.
 
 ## Foliar chemistry
@@ -104,10 +115,9 @@ Principal component analysis, utilizing the ‘vegan’ package [@oksanen_vegan:
 
 ## Ecophysiology among plant lineages and habitats
 
-We first explored how each of 10 measured functional traits varied and were distributed among co-occurring ferns, angiosperms and lycophytes in closed habitats. In total, 52.9 % of the trait variation was accounted for in two dimensions, encompassing differences in resource economics, physiology and anatomy of the surveyed taxa. Interestingly, there was minimal overlap among component scores for angiosperms compared to spore-bearing ferns and lycophytes (Figure `r pcagroup`). Specifically, angiosperm species were associated with gas exchange, anatomical and stoichiometric functional traits related to optimizing carboxylation. In contrast, lycophyte and fern species were most associated with physiological traits related to maintaining postie carbon balance.
+We first explored how each of 10 measured functional traits varied and were distributed among co-occurring ferns, angiosperms and lycophytes in closed habitats. In total, 52.9 % of the trait variation was accounted for in two dimensions, encompassing differences in resource economics, physiology and anatomy of the surveyed taxa. Interestingly, there was minimal overlap among component scores for angiosperms compared to spore-bearing ferns and lycophytes (Figure `r pcagroup`). Specifically, component scores for angiosperm species were associated with gas exchange, anatomical and stoichiometric functional traits related to optimizing carboxylation. In contrast, lycophyte and fern species were most associated with physiological traits related to maintaining positive carbon balance.
 
 \
-
 Next, we explored how the same suite of 10 functional traits were distributed among open and closed habitats, in both angiosperms and ferns. In total, 55.9 % of the trait variation was accounted for in two dimensions. Component scores for angiosperms and fern species broadly diverged across open and closed canopy habitats, however, associations with physiological traits in open habitats were stronger for angiosperms (Figure `r pcashade`). Specifically, angiosperms appear more plastic in their ability to up-regulate traits related to photosynthetic gas exchange with increased light availability. Overall, these diverging relationships with measured functional traits suggest a highly variable in situ ecophysiology for coexisting angiosperm, fern and lycophyte taxa. This is evident in broad differences in mean values of ecophyioslogical traits across the three plant lineages and among habitat types (Table 2).
 
 ## Leaf gas exchange
@@ -115,7 +125,6 @@ Next, we explored how the same suite of 10 functional traits were distributed am
 Ferns and angiosperms growing in low-light habitats had similar A~n~, however, in open habitats angiosperms had 74.0 % higher rates of A~n~ than ferns (canopy x plant group, *P* = 0.043, Figure `r interfig`A). Rates of A~n~ for angiosperms in open habitats were 154.2 % higher than angiosperms in closed habitats (*P* =0.001, t=-4.742), while rates of A~n~ for ferns were statistically similar across habitat types. Overall, ferns and angiosperms in open habitats had nearly 3-fold higher g~s~ than comparable species in closed habitats (*P* = 0.003). Rates of g~s~ for angiosperms in open habitats increased nearly two-fold compared to angiosperms in closed habitats (*P* = 0.0341, t=-2.973), while rates of g~s~ for ferns were statistically similar across habitat types (Figure `r interfig`B). Neither ferns nor angiosperms differed in WUE across the open and closed habitats, and WUE was  statistically similar bewteen the two plant groups.
 
 \
-
 In closed habitats, variation in gas exchange parameters was largely associated with individual species variation (random effect) instead of functional differences between plant groups. No differences between A~n~ were detected between between angiosperms, ferns or lycophytes. Rates of g~s~ were highest in angiosperms (*P* = 0.001, Figure `r shadefig`A). Overall, the spore-bearing plant species had 50.5 % lower g~s~ than angiosperms (*P* = 0.004, Figure `r seedsporefig`A). Water-use efficiency was 88.5 % higher in lycophytes than ferns and angiosperms (*P* = 0.005), while ferns and angiosperms where statistically similar (Figure `r shadefig`B).
 
 ## Light response curve parameters
@@ -123,7 +132,6 @@ In closed habitats, variation in gas exchange parameters was largely associated 
 Overall, ferns and angiosperms had similar $\phi$ across open and closed habitats. Quantum yields were also equivalent across angiosperms and ferns in open and closed habitats. Shifts in R~d~ between open and closed habitats differed for angiosperms but not for ferns (habitat x plant group, *P* < 0.001, Figure `r interfig`C). Specifically, R~d~ in angiosperms was 4 fold greater in open compared to closed habitats (t=-4.802, *P* = 0.013). Similarly, shifts in LCP between open and closed habitats differed for angiosperms but not for ferns (habitats x plant group, *P* < 0.001, Figure `r interfig`D). Specifically, the LCP in angiosperms increased nearly 4-fold in open compared to closed habitats (t=-4.382, *P* = 0.019).
 
 \
-
 In closed canopy habitats, the LCP of spore-bearing plant species were equivalent and 161.9 % higher than angiosperm species (*P* = 0.0195, Figure `r seedsporefig`C). Photosynthetic quantum was statistically similar between each plant group, but lycophytes and ferns were broadly higher than angiosperms. Spore-bearing plant species had equivalent R~d~, and R~d~ was nearly 4-fold lower than in angiosperms (*P* = 0.0178, Figure `r seedsporefig`D)
 
 ## Stoichiometry
@@ -131,7 +139,6 @@ In closed canopy habitats, the LCP of spore-bearing plant species were equivalen
 Ferns and angiosperms in open habitats had marginally lower foliar N content compared to similar species growing in closed habitats (-17.2 %, *P* = 0.073), with a large proportion of variation attributed to individual species differences. No differences in foliar P content were detected between open and closed habitats for either ferns or angiosperms. Across all habitats, foliar P content was 22.1 % higher in angiosperms than in ferns (*P* =  0.034). Neither ferns nor angiosperms species differed in their N:P ratios across the two habitat types.
 
 \
-
 Within closed habitats, lycophytes have 46.3 % lower foliar N content than ferns and angiosperms, which do not statistically differ (*P* < 0.001, Figure `r shadefig`C). Lycophytes also had 24.0 % lower foliar P content than angiosperms (*P* = .026), while ferns were similar to both groups (Figure `r shadefig`D). Overall, spore-bearing species had 18.7 % lower foliar P content than angiosperm species (*P* = 0.008, Figure `r seedsporefig`B). The N:P ratios were not statistically different across angiosperms, ferns and lycophytes in closed habitats. 
 
 \

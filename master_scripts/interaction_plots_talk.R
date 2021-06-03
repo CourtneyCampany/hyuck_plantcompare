@@ -57,7 +57,7 @@ jpeg(filename = "manuscript/interactionplot.jpeg",
      width = 8.4, height = 8.4, units = "in", res= 500)
 
 # windows()
-par(mfrow=c(2,2), las=1,mgp=c(3,1,0),oma=c(6,5,1,5))
+par(mfrow=c(2,2), las=1,mgp=c(3,1,0),oma=c(6,5,1,5), cex.axis = 1.25)
 
 #photosynthesis
 par(mar=c(0,0,0,0))
@@ -71,11 +71,11 @@ with(photo_agg, arrows(xaxis, Photo.mean, xaxis,
                        col=canopycols[plant_group],length=0.03, lwd=2))
 points(Photo.mean ~ xaxis, data=photo_agg, cex=1.5, col=canopycols[plant_group], 
        pch=19)
-lines(x=c(1,2), y=c(photo_agg[3,3],photo_agg[4,3]), lwd=3.5, col="forestgreen")
-lines(x=c(1,2), y=c(photo_agg[1,3],photo_agg[2,3]), lwd=3.5, col="firebrick")
+lines(x=c(1,2), y=c(photo_agg[3,3],photo_agg[4,3]), lwd=4, col="forestgreen")
+lines(x=c(1,2), y=c(photo_agg[1,3],photo_agg[2,3]), lwd=4, col="firebrick")
 axis(1, at=1:2, labels = FALSE, tcl=.5)
 axis(2, las=1)
-mtext(side=2, at=7.5, line=3,text=photolab, xpd=TRUE, las=3, cex=1)
+mtext(side=2, at=7.5, line=3,text=photolab, xpd=TRUE, las=3, cex=1.25)
 
 text(x=0.5, y=15, label = "A", cex=1.25)
 
@@ -91,16 +91,16 @@ with(cond_agg, arrows(xaxis, Cond.mean, xaxis,
                        col=canopycols[plant_group],length=0.03, lwd=2))
 points(Cond.mean ~ xaxis, data=cond_agg, cex=1.5, col=canopycols[plant_group], 
        pch=19)
-lines(x=c(1,2), y=c(cond_agg[3,3],cond_agg[4,3]), lwd=3.5, col="forestgreen")
-lines(x=c(1,2), y=c(cond_agg[1,3],cond_agg[2,3]), lwd=3.5, col="firebrick")
+lines(x=c(1,2), y=c(cond_agg[3,3],cond_agg[4,3]), lwd=4, col="forestgreen")
+lines(x=c(1,2), y=c(cond_agg[1,3],cond_agg[2,3]), lwd=4, col="firebrick")
 axis(1, at=1:2, labels = FALSE, tcl=.5)
 axis(4, las=1)
-mtexti(condlab, 4, outer=TRUE, cex=1.25, off=.6)
+mtexti(condlab, 4, outer=TRUE, cex=1.5, off=.6)
 text(x=0.5, y=.4, label = "B", cex=1.25)
 
 legend("topright", c("Angiosperms", "Ferns"), pch=19, 
         col=c(plantcols[2], plantcols[3]),
-        bty='n', inset=.01, cex=1.25)
+        bty='n', inset=.01, cex=1.5)
 
 #rd (add model stats)
 par(mar=c(0,0,0,0))
@@ -114,11 +114,11 @@ with(rdagg, arrows(xaxis, Rd.mean, xaxis,
                    col=canopycols[plant_group],length=0.03, lwd=2))
 points(Rd.mean ~ xaxis, data=rdagg, cex=1.5, col=canopycols[plant_group], 
        pch=19)
-lines(x=c(1,2), y=c(rdagg[3,3],rdagg[4,3]), lwd=3.5, col="forestgreen")
-lines(x=c(1,2), y=c(rdagg[1,3],rdagg[2,3]), lwd=3.5, col="firebrick")
-axis(1, at=1:2, labels = c("Closed", "Open"), cex=1.5)
+lines(x=c(1,2), y=c(rdagg[3,3],rdagg[4,3]), lwd=4, col="forestgreen")
+lines(x=c(1,2), y=c(rdagg[1,3],rdagg[2,3]), lwd=4, col="firebrick")
+axis(1, at=1:2, labels = c("Closed", "Open"), cex=2)
 axis(2, las=1)
-mtext(side=2, at=0.5, line=3,text=resplab2, xpd=TRUE, las=3, cex=1)
+mtext(side=2, at=0.5, line=3,text=resplab2, xpd=TRUE, las=3, cex=1.25)
 text(x=0.5, y=1.09, label = "C", cex=1.25)
 
 #LCP (add model stats)
@@ -133,11 +133,11 @@ with(lcp_agg, arrows(xaxis, LCP.mean, xaxis,
                    col=canopycols[plant_group],length=0.03, lwd=2))
 points(LCP.mean ~ xaxis, data=lcp_agg, cex=1.5, col=canopycols[plant_group], 
        pch=19)
-lines(x=c(1,2), y=c(lcp_agg[3,3],lcp_agg[4,3]), lwd=3.5, col="forestgreen")
-lines(x=c(1,2), y=c(lcp_agg[1,3],lcp_agg[2,3]), lwd=3.5, col="firebrick")
-axis(1, at=1:2, labels = c("Closed", "Open"), cex=1.5)
+lines(x=c(1,2), y=c(lcp_agg[3,3],lcp_agg[4,3]), lwd=4, col="forestgreen")
+lines(x=c(1,2), y=c(lcp_agg[1,3],lcp_agg[2,3]), lwd=4, col="firebrick")
+axis(1, at=1:2, labels = c("Closed", "Open"), cex=2)
 axis(4, las=1)
-mtexti(lcplab, 4, outer=TRUE, cex=1.25, off=.6)
+mtexti(lcplab, 4, outer=TRUE, cex=1.5, off=.6)
 text(x=0.5, y=20.7, label = "D", cex=1.25)
 
 # dev.copy2pdf(file= "output/interactions.pdf")
